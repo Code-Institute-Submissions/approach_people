@@ -5,10 +5,23 @@ nav {
 .nav-wrapper a{
     text-decoration: none;
 }
+/***HERO IMAGE***/
+.hero-image{
+    background-image: url("../img/hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+    background-attachment: fixed;
+}
 
 /***FOOTER***/
 footer{
-    background-color: #48D1CC
+    background-color: #48D1CC;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 .col-12 i {
     font-size: 3em;

@@ -20,6 +20,10 @@ mongo = PyMongo(app)
 def index():
     return render_template('index.html')
 
+@app.route('/contact_us')
+def contact_us():
+    return render_template('contact-us.html')
+
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

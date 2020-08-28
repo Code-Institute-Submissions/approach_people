@@ -1,0 +1,16 @@
+/***NAVIGATION BAR***/
+nav {
+    background-color: #48D1CC;
+}
+.nav-wrapper a{
+    text-decoration: none;
+}
+
+/***FOOTER***/
+footer{
+    background-color: #48D1CC
+}
+.col-12 i {
+    font-size: 3em;
+    color: black;
+}

@@ -7,11 +7,10 @@
     <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">business_center</i>
-          <select>
-            <option value="" disabled selected>Sector</option>
-            <option value="1">IT</option>
-            <option value="2">Marketing</option>
-            <option value="3">Security</option>
+          <select id="category" name="category_name">
+            {% for cat in categories %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+            {% endfor %}
         </select>
           <label for="salutation">Sector</label>
         </div>
@@ -19,35 +18,35 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">business</i>
-          <input id="company_name" type="text" class="validate">
+          <input id="company_name" name="company_name" type="text" class="validate">
           <label for="company_name">Company Name</label>
         </div>
        </div>
        <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
-          <input id="job_title" type="text" class="validate">
+          <input id="job_title" name="job_title" type="text" class="validate">
           <label for="job_title">Job Title</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">email</i>
-          <input id="email" type="email" class="validate">
+          <input id="email" name="email" type="email" class="validate">
           <label for="email">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
+          <input id="icon_telephone" name="telephone" type="tel" class="validate">
           <label for="icon_telephone">Telephone</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-        <i class="material-icons prefix">short_text</i>
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
+        <i class="material-icons prefix">assignment</i>
+          <textarea id="textarea1" name="job_description" class="materialize-textarea"></textarea>
           <label for="textarea1">Job Description</label>
         </div>
       </div>

@@ -3,7 +3,10 @@
 <h1>Jobs Posted</h1>
 {% for job in jobs %}
     {{job.category_name}}
+    {{job.company_name}}
     {{job.job_title}}
     {{job.job_description}}
+    {{job.email}}
+    {{job.telephone}}
 {% endfor %}
 {% endblock %}

@@ -37,8 +37,15 @@ def jobs_posted():
 
 
 @app.route('/post_job')
+def add_job():
+    return render_template('post-job.html', categories=mongo.db.categories.find())
+
+
+@app.route('/post_job', methods=['POST'])
 def post_job():
-    return render_template('post-job.html')
+    jobs = mongo.db.jobs
+    jobs.insert_one(request.form.to_dict())
+    return redirect(url_for('jobs_posted'))
 
 
 if __name__ == '__main__':

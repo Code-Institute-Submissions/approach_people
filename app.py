@@ -20,9 +20,25 @@ mongo = PyMongo(app)
 def index():
     return render_template('index.html')
 
+
 @app.route('/contact_us')
 def contact_us():
     return render_template('contact-us.html')
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@app.route('/jobs_posted')
+def jobs_posted():
+    return render_template('jobs-posted.html')
+
+
+@app.route('/post_job')
+def post_job():
+    return render_template('post-job.html')
 
 
 if __name__ == '__main__':

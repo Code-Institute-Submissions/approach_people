@@ -5,8 +5,8 @@
         <div class="row">
             <div class="col-12">
                 <h2>Some Text</h2>
-                <a href="#"><button type="button" class="btn btn-info">LOOKING FOR A JOB?</button></a>
-                <a href="#"><button type="button" class="btn btn-info">POST A JOB</button></a>
+                <a href="{{ url_for('jobs_posted') }}"><button type="button" class="btn btn-info">LOOKING FOR A JOB?</button></a>
+                <a href="{{ url_for('post_job') }}"><button type="button" class="btn btn-info">POST A JOB</button></a>
             </div>
         </div>
     </div>

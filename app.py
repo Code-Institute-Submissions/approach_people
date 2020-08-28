@@ -33,7 +33,7 @@ def about():
 
 @app.route('/jobs_posted')
 def jobs_posted():
-    return render_template('jobs-posted.html')
+    return render_template('jobs-posted.html', jobs=mongo.db.jobs.find())
 
 
 @app.route('/post_job')

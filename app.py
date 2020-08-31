@@ -49,6 +49,12 @@ def post_job():
     return redirect(url_for('jobs_posted'))
 
 
+@app.route('/delete_job/<job_id>')
+def delete_job(job_id):
+    mongo.db.jobs.remove({'_id': ObjectId(job_id)})
+    return redirect(url_for('jobs_posted'))
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),

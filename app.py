@@ -49,6 +49,32 @@ def post_job():
     return redirect(url_for('jobs_posted'))
 
 
+@app.route('/edit_job/<job_id>')
+def edit_job(job_id):
+    the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+    all_categories = mongo.db.categories.find()
+    return render_template('edit-job.html', job=the_job,
+                           categories=all_categories)
+
+
+@app.route('/update_job/<job_id>', methods=["POST"])
+def update_job(job_id):
+    jobs = mongo.db.jobs
+    jobs.update({'_id': ObjectId(job_id)},
+    {
+        'category_name': request.form.get('category_name'),
+        'company_name': request.form.get('company_name'),
+        'job_title': request.form.get('job_title'),
+        'email': request.form.get('email'),
+        'telephone': request.form.get('telephone'),
+        'job_description': request.form.get('job_description'),
+        'job_location': request.form.get('job_location'),
+        'posted_date': request.form.get('posted_date'),
+        'due_date': request.form.get('due_date')
+    })
+    return redirect(url_for('jobs_posted'))
+
+
 @app.route('/delete_job/<job_id>')
 def delete_job(job_id):
     mongo.db.jobs.remove({'_id': ObjectId(job_id)})

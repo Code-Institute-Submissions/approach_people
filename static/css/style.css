@@ -18,10 +18,6 @@ nav {
 footer{
     background-color: #48D1CC;
     padding: 20px;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 .col-12 i {
     font-size: 3em;

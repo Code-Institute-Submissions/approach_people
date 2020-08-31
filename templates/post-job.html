@@ -7,12 +7,12 @@
     <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">business_center</i>
-          <select id="category" name="category_name">
+          <select id="category_name" name="category_name">
             {% for cat in categories %}
                       <option value="{{cat.category_name}}">{{cat.category_name}}</option>
             {% endfor %}
         </select>
-          <label for="salutation">Sector</label>
+          <label for="sector">Sector</label>
         </div>
        </div>
       <div class="row">
@@ -39,7 +39,7 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" name="telephone" type="tel" class="validate">
+          <input id="telephone" name="telephone" type="tel" class="validate">
           <label for="icon_telephone">Telephone</label>
         </div>
       </div>
@@ -50,6 +50,19 @@
           <label for="textarea1">Job Description</label>
         </div>
       </div>
+      <div class="row">
+            <div class="input-field col s6" id="matfix">
+                <i class="material-icons prefix">today</i>
+                <input id="posted_date" name="posted_date" type="text" class="datepicker">
+                <label for="icon_prefix">Date Posted</label>
+            </div>
+        
+            <div class="input-field col s6" id="matfix-2">
+                <i class="material-icons prefix">today</i>
+                <input id="due_date" name="due_date" type="text" class="datepicker">
+                <label for="icon_prefix">Due Date</label>
+            </div>
+        </div>
       <div class="row">
             <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>

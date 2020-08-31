@@ -38,7 +38,8 @@ def jobs_posted():
 
 @app.route('/post_job')
 def add_job():
-    return render_template('post-job.html', categories=mongo.db.categories.find())
+    return render_template('post-job.html', 
+                            categories=mongo.db.categories.find())
 
 
 @app.route('/post_job', methods=['POST'])

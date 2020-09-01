@@ -70,7 +70,8 @@ def update_job(job_id):
         'job_description': request.form.get('job_description'),
         'job_location': request.form.get('job_location'),
         'posted_date': request.form.get('posted_date'),
-        'due_date': request.form.get('due_date')
+        'due_date': request.form.get('due_date'),
+        'job_salary': request.form.get('job_salary')
     })
     return redirect(url_for('jobs_posted'))
 
@@ -79,6 +80,12 @@ def update_job(job_id):
 def delete_job(job_id):
     mongo.db.jobs.remove({'_id': ObjectId(job_id)})
     return redirect(url_for('jobs_posted'))
+
+
+@app.route('/apply')
+def apply():
+    return render_template('apply.html')
+
 
 
 if __name__ == '__main__':

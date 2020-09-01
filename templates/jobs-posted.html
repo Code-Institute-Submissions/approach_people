@@ -1,33 +1,51 @@
 {% extends 'base.html'%}
 {% block content %}
 <h1>Jobs Posted</h1>
+<div class="container">
+	<div class="row justify-content-center">
+    <div class="input-field col s6">
+          <i class="material-icons prefix">business_center</i>
+          <select id="category_name" name="category_name">
+          <option value="" disabled selected>Choose Sector</option>
+            {% for cat in categories %}
+                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+            {% endfor %}
+        </select>
+          <label for="sector">Sector</label>
+        </div>
+		<div class="input-field col s6">
+			<textarea id="textarea1" class="materialize-textarea"></textarea>
+			<label for="textarea1"><i class="material-icons prefix">search</i></label>
+		</div>
+	</div>
+</div>
 {% for job in jobs %}
-    <div class="container bg-light">
-    <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="">
+<div class="container">
+	<div class="card">
+		<div class="card-image waves-effect waves-block waves-light">
+			<img class="activator" src="">
     </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">{{job.job_title}}<i class="material-icons right">more_vert</i></span>
-      <p>{{job.company_name}}</p>
-      <a href="{{url_for('apply')}}"><button class="btn btn-info" type="submit" name="action">Apply
+			<div class="card-content bg-light">
+				<span class="card-title activator grey-text text-darken-4">{{job.job_title}}<i class="material-icons right">more_vert</i></span>
+				<p>{{job.company_name}}</p>
+				<a href="{{url_for('apply')}}"><button class="btn btn-info" type="submit" name="action">Apply
             <i class="material-icons right">send</i>
             </button></a>
-      <a href="{{url_for('edit_job', job_id=job._id)}}"><button class="btn btn-info" type="submit" name="action">Edit Job
+				<a href="{{url_for('edit_job', job_id=job._id)}}"><button class="btn btn-info" type="submit" name="action">Edit Job
             <i class="material-icons right">mode_edit</i>
             </button></a>
-      <a href="{{url_for('delete_job', job_id=job._id)}}"><button class="btn btn-info" type="submit" name="action">Delete Job
+				<a href="{{url_for('delete_job', job_id=job._id)}}"><button class="btn btn-info" type="submit" name="action">Delete Job
             <i class="material-icons right">delete</i>
             </button></a>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">{{job.job_title}}<i class="material-icons right">close</i></span>
-      <p>{{job.job_description}}</p>
-      <p>Email: {{job.email}}</p>
-      <p>Telephone: {{job.telephone}}</p>
-      <p>Salary: {{job.job_salary}}</p>
-    </div>
-  </div>
-  </div>
-{% endfor %}
-{% endblock %}
+			</div>
+			<div class="card-reveal">
+				<span class="card-title grey-text text-darken-4">{{job.job_title}}<i class="material-icons right">close</i></span>
+				<p>{{job.job_description}}</p>
+				<p>Email: {{job.email}}</p>
+				<p>Telephone: {{job.telephone}}</p>
+				<p>Salary: {{job.job_salary}}</p>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+	{% endblock %}

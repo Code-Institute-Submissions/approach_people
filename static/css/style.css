@@ -1,6 +1,6 @@
 /***NAVIGATION BAR***/
 nav {
-    background-color: #48D1CC;
+    background-color: #00CED1;
 }
 .nav-wrapper a{
     text-decoration: none;
@@ -14,9 +14,13 @@ nav {
     background-attachment: fixed;
 }
 
+body{
+    background-color: #D3D3D3;
+}
+
 /***FOOTER***/
 footer{
-    background-color: #48D1CC;
+    background-color: #20B2AA;
     padding: 20px;
 }
 .col-12 i {

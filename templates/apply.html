@@ -1,51 +1,52 @@
 {% extends 'base.html'%}
 {% block content %}
+<h1>Apply</h1>
 <div class="container">
 <div class="row">
     <form action="{{ url_for('apply') }}" class="col s12">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="first_name" type="text" class="validate">
+          <input id="first_name" type="text" class="validate" required>
           <label for="first_name">First Name</label>
         </div>
        </div>
        <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">account_circle</i>
-          <input id="last_name" type="text" class="validate">
+          <input id="last_name" type="text" class="validate" required>
           <label for="last_name">Last Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">email</i>
-          <input id="email" type="email" class="validate">
+          <input id="email" type="email" class="validate" required>
           <label for="email">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">phone</i>
-          <input id="telephone" name="telephone" type="tel" class="validate">
+          <input id="telephone" name="telephone" type="tel" class="validate" required>
           <label for="icon_telephone">Telephone</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
         <i class="material-icons prefix">assignment</i>
-          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <textarea id="textarea1" class="materialize-textarea" required></textarea>
           <label for="textarea1">Your cover letter</label>
         </div>
       </div>
       <div class="row">
-        <div class="file-field input-field">
+        <div class="file-field input-field" required>
       <div class="btn">
         <span>Upload</span>
         <input type="file" multiple>
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" placeholder="Upload your CV">
+        <input class="file-path validate" type="text" placeholder="Upload your CV" required>
       </div>
     </div>
       </div>

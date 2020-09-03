@@ -2,8 +2,8 @@
 {% block content %}
 <h1>Jobs Posted</h1>
 <div class="container">
-	<div class="row justify-content-center">
-    <div class="input-field col s6">
+	<div class="row">
+    <div class="input-field col s4">
           <i class="material-icons prefix">business_center</i>
           <select id="category_name" name="category_name">
           <option value="" disabled selected>Choose Sector</option>
@@ -12,13 +12,20 @@
             {% endfor %}
         </select>
           <label for="sector">Sector</label>
-        </div>
+          </div>
+          <div class="col s4">
         <form action="{{ url_for('search')  }}" method="POST">
-		<div class="input-field col s6">
+		<div class="input-field">
 			<i class="material-icons prefix">search</i>
             <input placeholder="Find your dream job!" name="search" type="text" class="validate" />
 		</div>
         </form>
+          </div>
+        <div class="col s4 text-center mt-3">
+            <button class="btn btn-info" type="submit" name="action">Search
+            <i class="material-icons right">search</i>
+            </button>
+        </div>
 	</div>
 </div>
 

@@ -71,7 +71,12 @@ def update_job(job_id):
         'job_location': request.form.get('job_location'),
         'posted_date': request.form.get('posted_date'),
         'due_date': request.form.get('due_date'),
-        'job_salary': request.form.get('job_salary')
+        'job_salary': request.form.get('job_salary'),
+        'tags': request.form.get('tags'),
+        'image_url': request.form.get('image_url'),
+        'requirements': request.form.get('requirements'),
+        'employment_type': request.form.get('employment_type'),
+        'posted_by': request.form.get('posted_by'),
     })
     return redirect(url_for('jobs_posted'))
 
@@ -85,6 +90,23 @@ def delete_job(job_id):
 @app.route('/apply')
 def apply():
     return render_template('apply.html')
+
+
+@app.route("/search", methods=["POST"])
+def search():
+    mongo.db.jobs.createIndex({"$**": "text"})
+    query = request.form.get("search")
+    # Search the database for the users search value, and find applicable recipes
+    search_results = mongo.db.jobs.find(
+        {"$text": {"$search": query}})
+    # Count the number of results
+    count = search_results.countDocuments(
+        {"$text": {"$search": query}})
+    # Render the results of the search
+    return render_template("jobs-posted.html",
+                           search_results=search_results,
+                           count=count,
+                           search=True)
 
 
 

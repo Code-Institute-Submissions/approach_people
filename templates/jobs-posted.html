@@ -13,17 +13,20 @@
         </select>
           <label for="sector">Sector</label>
         </div>
+        <form action="{{ url_for('search')  }}" method="POST">
 		<div class="input-field col s6">
-			<textarea id="textarea1" class="materialize-textarea"></textarea>
-			<label for="textarea1"><i class="material-icons prefix">search</i></label>
+			<i class="material-icons prefix">search</i>
+            <input placeholder="Find your dream job!" name="search" type="text" class="validate" />
 		</div>
+        </form>
 	</div>
 </div>
+
 {% for job in jobs %}
 <div class="container">
 	<div class="card">
 		<div class="card-image waves-effect waves-block waves-light">
-			<img class="activator" src="">
+			<img class="activator" src="{{job.image_url}}">
     </div>
 			<div class="card-content bg-light">
 				<span class="card-title activator grey-text text-darken-4">{{job.job_title}}<i class="material-icons right">more_vert</i></span>
@@ -41,9 +44,12 @@
 			<div class="card-reveal">
 				<span class="card-title grey-text text-darken-4">{{job.job_title}}<i class="material-icons right">close</i></span>
 				<p>{{job.job_description}}</p>
+                <p>{{job.requirements}}</p>
 				<p>Email: {{job.email}}</p>
 				<p>Telephone: {{job.telephone}}</p>
 				<p>Salary: {{job.job_salary}}</p>
+                <p>Employment Type: {{job.employment_type}}</p>
+                <p>Posted By: {{job.posted_by}}</p>
 			</div>
 		</div>
 	</div>

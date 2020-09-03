@@ -34,7 +34,7 @@
         <div class="input-field col s12">
         <i class="material-icons prefix">attach_money</i>
           <input id="job_salary" name="job_salary" type="text" class="validate">
-          <label for="job_salary">Job Salary</label>
+          <label for="job_salary">Job Salary (Yearly)</label>
         </div>
       </div>
       <div class="row">
@@ -60,6 +60,24 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
+        <i class="material-icons prefix">assignment</i>
+          <textarea id="textarea2" name="requirements" class="materialize-textarea"></textarea>
+          <label for="textarea1">Requirements</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">business_center</i>
+          <select id="employment_type" name="employment_type">
+          <option value="" disabled selected>Choose Employment Type</option>
+                      <option value="Full Time">Full Time</option>
+                      <option value="Part Time">Part Time</option>
+        </select>
+          <label for="employment_type">Employment Type</label>
+        </div>
+       </div>
+      <div class="row">
+        <div class="input-field col s12">
         <i class="material-icons prefix">add_location</i>
           <input id="job_location" name="job_location" type="text" class="validate">
           <label for="job_location">Job Location</label>
@@ -78,6 +96,20 @@
                 <label for="icon_prefix">Due Date</label>
             </div>
         </div>
+        <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">account_circle</i>
+          <input id="posted_by" name="posted_by" type="text" class="validate">
+          <label for="posted_by">Posted By</label>
+        </div>
+      </div>
+         <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">insert_link</i>
+          <input id="image_url" name="image_url" type="text" class="validate">
+          <label for="image_url">Logo URL</label>
+        </div>
+      </div>
       <div class="row">
             <button class="btn btn-info" type="submit" name="action">Add Job
             <i class="material-icons right">playlist_add</i>

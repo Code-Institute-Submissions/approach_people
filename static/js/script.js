@@ -10,6 +10,7 @@ $(".datepicker").datepicker({
   close: "Ok",
   closeOnSelect: false, // Close upon selecting a date,
 });
+// Reload contact-us.html once modal is closed
 $('.close-modal').click(function() {
     location.reload();
 });

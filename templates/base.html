@@ -12,9 +12,9 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="bg-light">
             <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="brand-logo">Approach People</a>
+                <a href="{{ url_for('index') }}" class="brand-logo"><img src="{{ url_for('static', filename='img/logo2.png') }}" alt="Logo"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('index') }}">Home</a></li>

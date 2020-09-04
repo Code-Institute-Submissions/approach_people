@@ -1,11 +1,12 @@
 /***NAVIGATION BAR***/
-nav {
-    background-color:#17a2b8;
-}
 .nav-wrapper a{
     text-decoration: none;
     color: black
 }
+.brand-logo img {
+  float: left;
+  margin-left: 7px;
+ }
 /***HERO IMAGE***/
 .hero-image{
     background-image: url("../img/hero-image.jpg");

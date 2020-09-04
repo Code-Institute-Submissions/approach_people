@@ -10,4 +10,7 @@ $(".datepicker").datepicker({
   close: "Ok",
   closeOnSelect: false, // Close upon selecting a date,
 });
+$('.close-modal').click(function() {
+    location.reload();
+});
 

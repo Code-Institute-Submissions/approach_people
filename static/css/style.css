@@ -17,6 +17,7 @@
 }
 
 /***BUTTONS***/
+/*style taken from https://demos.themesfinity.com/css-buttons/*/
 .landing-btn{
     background: #01a8c1;
     background: -moz-linear-gradient(-45deg, #01a8c1 0%, #2adbf7 50%, #00b5d1 51%, #0aafc9 71%, #0599b1 100%);

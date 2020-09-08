@@ -3,6 +3,7 @@ $(document).ready(function () {
   $("select").formSelect();
    $("#posted_date").datepicker({ 
     });
+    $(".hidden").hide();
     // Getting todays date for Date Posted input field
     // source: https://stackoverflow.com/questions/233553/how-do-i-pre-populate-a-jquery-datepicker-textbox-with-todays-date#:~:text=You%20must%20FIRST%20call%20datepicker,to%20get%20the%20current%20date.&text=var%20myDate%20%3D%20new%20Date()%3B,%2B%20'%2F'%20%2B%20myDate.
     var myDate = new Date();
@@ -25,3 +26,13 @@ $('.close-modal').click(function() {
     location.reload();
 });
 
+$('.more-info').click(function() {
+    $(".hidden").show("slow");
+    $(this).addClass("d-none");
+    $(".less-info").removeClass("d-none");
+});
+$('.less-info').click(function() {
+    $(".hidden").hide("slow");
+    $(this).addClass("d-none");
+    $(".more-info").removeClass("d-none");
+});

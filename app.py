@@ -89,6 +89,12 @@ def apply():
     return render_template('apply.html')
 
 
+@app.route('/job_details/<job_id>')
+def job_details(job_id):
+    the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+    return render_template('job-details.html', job=the_job)
+
+
 @app.route("/search", methods=["POST"])
 def search():
     query = request.form.get("search")

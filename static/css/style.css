@@ -93,3 +93,12 @@ footer{
     font-size: 3em;
     color: black;
 }
+.extra-info{
+    width: 100%;
+}
+.extra-info .btn{
+    width: 100%;
+}
+.job-container{
+    width: 50%;
+}

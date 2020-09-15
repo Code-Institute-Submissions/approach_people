@@ -22,3 +22,10 @@ $('.close-modal').click(function() {
     location.reload();
 });
 
+
+$("#job_salary").keyup(function(){
+    let salary = document.getElementById("job_salary").value;
+    let convert = new Intl.NumberFormat("en-US",{style:"currency", currency:"USD"});
+    document.getElementById("job_salary").innerHTML = convert.format(salary); 
+});
+

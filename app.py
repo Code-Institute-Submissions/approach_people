@@ -16,6 +16,8 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 mongo = PyMongo(app)
 mongo.db.jobs.create_index([("job_title", "text")])
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -33,7 +35,8 @@ def about():
 
 @app.route('/jobs_posted')
 def jobs_posted():
-    return render_template('jobs-posted.html', jobs=mongo.db.jobs.find(), categories=mongo.db.categories.find())
+    return render_template('jobs-posted.html', jobs=mongo.db.jobs.find(), 
+                            categories=mongo.db.categories.find())
 
 
 @app.route('/post_job', methods=['GET', 'POST'])
@@ -98,7 +101,7 @@ def job_details(job_id):
 @app.route("/search", methods=["POST"])
 def search():
     query = request.form.get("search")
-    # Search the database for the users search value, and find applicable recipes
+    # Search the database for the users search value, and find applicable jobs
     search_results = mongo.db.jobs.find(
         {"$text": {"$search": query}})
     # Render the results of the search

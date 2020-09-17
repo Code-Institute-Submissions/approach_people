@@ -42,7 +42,8 @@
     animation: AnimationName 3s ease infinite;
     border: medium none;
     border-radius: 100px;
-    
+    width: 40%;
+    height: 30%;
 }
 
 .btn-info{
@@ -127,6 +128,9 @@ footer{
 }
 .landing-page{
     display: flex;
-    justify-content:center;
+    justify-content:flex-end;
     align-items:center;
+}
+.landing-text{
+    font-size: 60px;
 }

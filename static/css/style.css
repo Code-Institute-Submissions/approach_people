@@ -55,6 +55,8 @@ body{
     border-radius: 100px;
     width: 40%;
     height: 30%;
+    color: #000;
+    font-size: 17px;
 }
 
 .btn-info{
@@ -125,12 +127,6 @@ footer{
      -o-transition: transform .2s;
      transition: transform .2s;
      transition: transform .2s, -webkit-transform .2s;
-}
-.bottom{
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
 }
 
 /***JOB-DETAILS***/

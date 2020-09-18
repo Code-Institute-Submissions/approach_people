@@ -21,3 +21,4 @@ $(".datepicker").datepicker({
 $('.close-modal').click(function() {
     location.reload();
 });
+

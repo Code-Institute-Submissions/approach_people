@@ -18,9 +18,9 @@ body{
     font-family: 'Do Hyeon', sans-serif;
 }
 .nav-wrapper a:hover{
--webkit-transform: scale(1.2);
-     -ms-transform: scale(1.2);
-     transform: scale(1.2);
+-webkit-transform: scale(1.1);
+     -ms-transform: scale(1.1);
+     transform: scale(1.1);
      -webkit-transition: -webkit-transform .2s;
      transition: -webkit-transform .2s;
      -o-transition: transform .2s;

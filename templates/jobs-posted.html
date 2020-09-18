@@ -1,12 +1,13 @@
 {% extends 'base.html'%} {% block content %}
-<h1 class="text-center">Jobs Posted</h1>
-<div class="container">
+<div class="container mt-5">
+<h1 class="text-center mb-5">Jobs Posted</h1>
     <form action="{{ url_for('search') }}" method="POST">
         <div class="row text-center">
             <div class="col-8">
                 <div class="input-field">
                     <i class="material-icons prefix">search</i>
-                    <input placeholder="Find your dream job!" name="search" type="text" class="validate" />
+                    <input name="search" type="text" class="validate"/>
+                    <label for="search">Search for your dream Job!</label>
                 </div>
             </div>
             <div class="col-4 mt-3">

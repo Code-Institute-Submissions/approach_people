@@ -7,6 +7,7 @@ $(document).ready(function () {
         minDate: dateToday,
         maxDate: dateToday
     });
+
 });
 $(".datepicker").datepicker({
   selectMonths: true, // Creates a dropdown to control month
@@ -22,3 +23,11 @@ $('.close-modal').click(function() {
     location.reload();
 });
 
+$(".details-btn").click(function(){
+    $(".company-details").removeClass("d-none");
+    $(".description").addClass("d-none");
+});
+$(".description-btn").click(function(){
+    $(".description").removeClass("d-none");
+    $(".company-details").addClass("d-none");
+});

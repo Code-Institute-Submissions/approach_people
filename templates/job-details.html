@@ -64,35 +64,33 @@
 <div class="container job-container">
     <div class="card mb-3">
         <div class="row no-gutters">
-            <div class="col-md-6">
+                    <div class="col-md-6">
+                      <button type="button" class="btn btn-lg description-btn">Description</button>
+                    </div>
+                    <div class="col-md-6">
+                    <button type="button" class="btn btn-lg details-btn">Company Details</button>
+                    </div>
+            <div class="col-md-12 description mt-3">
                 <div class="card-body">
                     <div class="row">
-                        <div class="extra-info text-center">
-                            <button type="button" class="btn btn-secondary btn-lg description">Description</button>
+                        <div class="extra-info">
                             <p>{{job.job_description}}</p>
                             <p>{{job.requirements}}</p>
                             <p>Due Date: {{job.due_date}}</p>
                         </div>
                     </div>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12 company-details d-none mt-3">
                 <div class="card-body">
                     <div class="row">
-                        <div class="extra-info text-center">
-                            <button type="button" class="btn btn-secondary btn-lg details">Company Details</button>
+                        <div class="extra-info">
                             <p>{{job.company_name}}</p>
-                            <p>{{job.email}}</p>
-                            <p>{{job.telephone}}</p>
-                            <p>{{job.posted_by}}</p>
+                            <p>Email: {{job.email}}</p>
+                            <p>Telephone: {{job.telephone}}</p>
+                            <p>Posted By: {{job.posted_by}}</p>
                         </div>
                     </div>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
                 </div>
             </div>
         </div>

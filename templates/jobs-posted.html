@@ -1,7 +1,7 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container mt-5">
 <div class="jumbotron">
-<h1 class="text-center mb-5">Jobs Posted</h1>
+<h1 class="text-center">Jobs Posted</h1>
     <form action="{{ url_for('search') }}" method="POST">
         <div class="row text-center">
             <div class="col-8">
@@ -28,7 +28,7 @@
 <div class="container">
     <div class="card mb-3">
         <div class="row no-gutters">
-            <div class="col-md-4">
+            <div class="col-md-4 card-img">
                 <img src="{{job.image_url}}" class="card-img" alt="Logo" />
             </div>
             <div class="col-md-8">
@@ -83,4 +83,5 @@
         </div>
     </div>
 </div>
-{% endfor %} {% endblock %}
+{% endfor %} 
+{% endblock %}

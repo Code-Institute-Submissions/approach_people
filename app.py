@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, flash
 from flask_pymongo import PyMongo
 import flask_pymongo
+import math
 from bson.objectid import ObjectId
 from os import path 
 if path.exists("env.py"):
@@ -19,6 +20,7 @@ mongo.db.jobs.create_index([("job_title", "text")])
 
 
 @app.route('/')
+@app.route('/home')
 def index():
     return render_template('index.html')
 
@@ -35,8 +37,24 @@ def about():
 
 @app.route('/jobs_posted')
 def jobs_posted():
-    return render_template('jobs-posted.html', jobs=mongo.db.jobs.find(), 
-                            categories=mongo.db.categories.find())
+    jobs = mongo.db.jobs.find()
+    # Pagination variable
+    limit = 5
+    # Find the requested page number (or default to page 1)
+    page_number = int(request.args.get('page_number', 1))
+    count = mongo.db.jobs.count_documents({})
+    # identify how many recipe records to be skipped based on page number
+    skip = (page_number - 1) * limit
+    # skip relevant number of recipes
+    jobs.skip(skip).limit(limit)
+    # identify how many pages of results are needed
+    pages = int(math.ceil(count / limit))
+    # create a page range
+    total_pages = range(1, pages + 1)
+    return render_template('jobs-posted.html', jobs=jobs,
+                            page_number=page_number,
+                            pages=total_pages,
+                            count=count)
 
 
 @app.route('/post_job', methods=['GET', 'POST'])
@@ -107,7 +125,7 @@ def search():
     # Render the results of the search
     return render_template("jobs-posted.html",
                            jobs=search_results,
-                           count=10,
+                           count=count,
                            search=True)
 
 

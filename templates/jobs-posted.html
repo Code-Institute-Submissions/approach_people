@@ -83,5 +83,20 @@
         </div>
     </div>
 </div>
-{% endfor %} 
+{% endfor %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+        <ul class="pagination justify-content-center">
+    {% for page in pages %}
+            {% if page == page_number %}
+            <li class="active green"><a href="#!">{{ page }}</a></li>
+            {% else %}
+            <li class="waves-effect"><a href="{{ url_for('jobs_posted', page_number=page) }}">{{ page }}</a></li>
+            {% endif %}
+        {% endfor %}  
+  </ul>
+        </div>
+    </div>
+</div> 
 {% endblock %}

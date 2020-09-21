@@ -1,5 +1,6 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container mt-5">
+<div class="jumbotron">
 <h1 class="text-center mb-5">Jobs Posted</h1>
     <form action="{{ url_for('search') }}" method="POST">
         <div class="row text-center">
@@ -12,7 +13,7 @@
             </div>
             <div class="col-4 mt-3">
                 <a href="{{ url_for('search') }}">
-                    <button class="btn btn-info" type="submit" name="action">
+                    <button class="btn btn-info search-btn" type="submit" name="action">
                         Search
                         <i class="material-icons right">search</i>
                     </button>
@@ -20,6 +21,7 @@
             </div>
         </div>
     </form>
+    </div>
 </div>
 
 {% for job in jobs %}
@@ -37,14 +39,14 @@
                     <h6 class="card-title"><i class="material-icons prefix">attach_money</i>{{job.job_salary}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">business_center</i>{{job.employment_type}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">today</i>{{job.posted_date}}</h6>
-                    <div class="row">
-                        <a href="{{url_for('apply')}}">
+                    <div class="row justify-content-end mr-3">
+                        <a href="{{url_for('apply')}}" class="mr-3">
                             <button class="btn btn-info" type="submit" name="action">
                                 Apply
                                 <i class="material-icons right">send</i>
                             </button>
                         </a>
-                        <a href="{{url_for('edit_job', job_id=job._id)}}">
+                        <a href="{{url_for('edit_job', job_id=job._id)}}" class="mr-3">
                             <button class="btn btn-info" type="submit" name="action">
                                 Edit Job
                                 <i class="material-icons right">mode_edit</i>
@@ -76,9 +78,6 @@
                             </div>
                         </div>
                     </div>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
                 </div>
             </div>
         </div>

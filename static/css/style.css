@@ -64,6 +64,7 @@
 
 .btn-info{
     border-radius: 100px;
+    font-size: 17px;
 }
 
 @-webkit-keyframes AnimationName {
@@ -99,7 +100,11 @@
         background-position:0% 31%
     }
 }
-
+.search-btn{
+    font-size: 18px;
+    width: 70%;
+    height: 60%;
+}
 body{
     font-family: 'Taviraj', serif;
     background-color: #D3D3D3;

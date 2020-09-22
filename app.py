@@ -125,7 +125,6 @@ def search():
     # Render the results of the search
     return render_template("jobs-posted.html",
                            jobs=search_results,
-                           count=count,
                            search=True)
 
 

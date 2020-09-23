@@ -1,6 +1,6 @@
 {% extends 'base.html'%} {% block content %}
 <div class="container job-container mt-5">
-<h2 class="text-center mb-5">{{job.job_title}} in {{job.company_name}}</h2>
+<h2 class="text-center mb-5 font-weight-bolder">{{job.job_title}} in {{job.company_name}}</h2>
     <div class="card mb-3">
         <div class="row no-gutters">
             <div class="col-md-4">
@@ -53,9 +53,6 @@
                             </div>
                         </div>
                     </div>
-                    <p class="card-text">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
                 </div>
             </div>
         </div>
@@ -73,10 +70,21 @@
             <div class="col-md-12 description mt-3">
                 <div class="card-body">
                     <div class="row">
-                        <div class="extra-info">
-                            <p>{{job.job_description}}</p>
+                        <div class="extra-info text-center">
+                        <h4 class="font-weight-bold border-bottom">Job Description</h4>
+                            <p>{{job.job_description}}<p>
+                            <h4 class="font-weight-bold border-bottom">Job Requirements</h4>
                             <p>{{job.requirements}}</p>
-                            <p>Due Date: {{job.due_date}}</p>
+                            <h4 class="font-weight-bold border-bottom">Job Location</h4>
+                            <p>{{job.job_location}}</p>
+                            <h4 class="font-weight-bold border-bottom">Job Salary</h4>
+                            <p>{{job.job_salary}} € per annum</p>
+                            <h4 class="font-weight-bold border-bottom">Date Posted</h4>
+                            <p>{{job.posted_date}}</p>
+                            <h4 class="font-weight-bold border-bottom">Due Date</h4>
+                            <p>{{job.due_date}}</p>
+                             <h4 class="font-weight-bold border-bottom">Job Location</h4>
+                            <p>{{job.job_location}}</p>
                         </div>
                     </div>
                 </div>
@@ -84,11 +92,16 @@
             <div class="col-md-12 company-details d-none mt-3">
                 <div class="card-body">
                     <div class="row">
-                        <div class="extra-info">
+                    <img src="{{job.image_url}}" class="rounded text-center" alt="Job Image">
+                        <div class="extra-info text-center">
+                        <h4 class="font-weight-bold border-bottom">Company Name</h4>
                             <p>{{job.company_name}}</p>
-                            <p>Email: {{job.email}}</p>
-                            <p>Telephone: {{job.telephone}}</p>
-                            <p>Posted By: {{job.posted_by}}</p>
+                            <h4 class="font-weight-bold border-bottom">Company Email</h4>
+                            <p>{{job.email}}</p>
+                            <h4 class="font-weight-bold border-bottom">Company Phone</h4>
+                            <p>{{job.telephone}}</p>
+                            <h4 class="font-weight-bold border-bottom">Posted By</h4>
+                            <p>{{job.posted_by}}</p>
                         </div>
                     </div>
                 </div>

@@ -19,8 +19,8 @@ $(".datepicker").datepicker({
 });
 
 // Reload contact-us.html once modal is closed
-$('.close-modal').click(function() {
-    location.reload();
+$('.apply').on('submit', function(){
+  $('.modal').removeClass('d-none');
 });
 
 $(".details-btn").click(function(){

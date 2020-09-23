@@ -160,7 +160,6 @@ footer{
     background-image: url("../img/job-background.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
 }
 .jumbotron{
     background-color: #f9fbe7;

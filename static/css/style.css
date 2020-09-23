@@ -143,6 +143,9 @@ footer{
 .extra-info{
     width: 100%;
 }
+.extra-info p{
+    letter-spacing: 1px;
+}
 .description-btn, .details-btn{
     width: 100%;
     height: 4rem;
@@ -164,4 +167,12 @@ footer{
 .jumbotron{
     background-color: #f9fbe7;
     border-radius: 15px;
+}
+.job-details-img{
+    width: 100%;
+    height: 100%;
+}
+.job-details-img img {
+    width: 50%;
+    height: 50%;
 }

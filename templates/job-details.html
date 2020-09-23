@@ -41,7 +41,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <h6>Are you sure about deleting this job? (You can not recover the deleted job.)</h6>
+                                        <h6>Are you sure about deleting this job?</h6>
                                     </div>
                                     <div class="modal-footer">
                                         <a href="{{url_for('delete_job', job_id=job._id)}}">
@@ -75,8 +75,6 @@
                             <p>{{job.job_description}}<p>
                             <h4 class="font-weight-bold border-bottom">Job Requirements</h4>
                             <p>{{job.requirements}}</p>
-                            <h4 class="font-weight-bold border-bottom">Job Location</h4>
-                            <p>{{job.job_location}}</p>
                             <h4 class="font-weight-bold border-bottom">Job Salary</h4>
                             <p>{{job.job_salary}} € per annum</p>
                             <h4 class="font-weight-bold border-bottom">Date Posted</h4>
@@ -92,7 +90,9 @@
             <div class="col-md-12 company-details d-none mt-3">
                 <div class="card-body">
                     <div class="row">
-                    <img src="{{job.image_url}}" class="rounded text-center" alt="Job Image">
+                    <div class="job-details-img text-center mb-5">
+                    <img src="{{job.image_url}}" class="rounded" alt="Job Image">
+                    </div>
                         <div class="extra-info text-center">
                         <h4 class="font-weight-bold border-bottom">Company Name</h4>
                             <p>{{job.company_name}}</p>

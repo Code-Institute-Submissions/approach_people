@@ -34,11 +34,6 @@ def contact_us():
     return render_template('contact-us.html')
 
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
 # View all jobs that a user has added themselves and include pagination logic
 
 @app.route('/jobs_posted')

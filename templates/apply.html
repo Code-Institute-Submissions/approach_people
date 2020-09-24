@@ -3,7 +3,7 @@
 <div class="container mt-5">
 <h1 class="text-center mb-5">Apply</h1>
 <div class="row">
-    <form action="{{ url_for('apply') }}" class="col s12 apply" onsubmit="openModal()">
+    <form action="{{ url_for('apply') }}" class="col s12" id="apply">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
@@ -54,7 +54,7 @@
             <button class="btn btn-info" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
             </button>
-            <div class="modal fade d-none" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">

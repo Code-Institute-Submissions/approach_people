@@ -6,7 +6,10 @@ function sendMail(contactForm){
     })
     .then(
         function(response){
-            alert("Your message has been sent successfully.");
+            $('.modal').modal('show');
+            $(".close-modal").click(function(){
+                location.reload();
+            });
         },
         function(error){
              alert("Fail, please try again.");

@@ -6,7 +6,7 @@
 </div>
 </div>
     <div class="row">
-        <form action="{{ url_for('contact_us') }}" onsubmit="return sendMail(this);" class="col s12 mt-5">
+        <form action="{{ url_for('contact_us') }}" onsubmit="return sendMail(this);" class="col s12 mt-5" id="contact-us">
             <div class="row">
                 <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
@@ -46,6 +46,18 @@
                 <button class="btn btn-info" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
             </button>
+            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h5>Thank you for reaching out to us. Your message will be reviewed and you will be contacted in no time.</h5>
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-info close-modal" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </form>
     </div>

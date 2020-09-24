@@ -17,12 +17,6 @@ $(".datepicker").datepicker({
   close: "Ok",
   closeOnSelect: false, // Close upon selecting a date,
 });
-
-// Reload contact-us.html once modal is closed
-$('.apply').on('submit', function(){
-  $('.modal').removeClass('d-none');
-});
-
 $(".details-btn").click(function(){
     $(".company-details").removeClass("d-none");
     $(".description").addClass("d-none");
@@ -30,4 +24,8 @@ $(".details-btn").click(function(){
 $(".description-btn").click(function(){
     $(".description").removeClass("d-none");
     $(".company-details").addClass("d-none");
+});
+$("#apply").submit(function(e){
+    $('.modal').modal('show');
+    return false;
 });

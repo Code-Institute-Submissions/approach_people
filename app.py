@@ -16,6 +16,7 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 
 
 mongo = PyMongo(app)
+# Create index for job titles in jobs collection
 mongo.db.jobs.create_index([("job_title", "text")])
 
 

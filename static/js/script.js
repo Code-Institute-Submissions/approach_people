@@ -29,3 +29,6 @@ $("#apply").submit(function(e){
     $('.modal').modal('show');
     return false;
 });
+$(".close-modal").click(function(){
+        location.reload();
+});

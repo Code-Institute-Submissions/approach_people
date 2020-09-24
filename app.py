@@ -151,9 +151,7 @@ def search():
     search_results = mongo.db.jobs.find({'$text': {'$search': query}}).sort("_id", -1)
 
     # Render the results of the search
-
-    return render_template('jobs-posted.html', jobs=search_results,
-                           search=True)
+    return render_template('jobs-posted.html', jobs=search_results)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'

@@ -24,7 +24,7 @@
     </form>
     </div>
 </div>
-
+{% if job %}
 {% for job in jobs %}
 <!--JOB DETAILS(showcase only, full description in job-details.html)-->
 <div class="container">
@@ -87,6 +87,9 @@
     </div>
 </div>
 {% endfor %}
+{% else %}
+<h4 class="center-align font-weight-bolder">No Jobs Found</h4>
+{% endif %}}
 <!--PAGINATION-->
 <div class="container">
     <div class="row">

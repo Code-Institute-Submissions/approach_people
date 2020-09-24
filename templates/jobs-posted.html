@@ -1,4 +1,5 @@
 {% extends 'base.html'%} {% block content %}
+<!--SEARCH BAR-->
 <div class="container mt-5">
 <div class="jumbotron">
 <h1 class="text-center">Jobs Posted</h1>
@@ -25,6 +26,7 @@
 </div>
 
 {% for job in jobs %}
+<!--JOB DETAILS(showcase only, full description in job-details.html)-->
 <div class="container">
     <div class="card mb-3">
         <div class="row no-gutters">
@@ -56,6 +58,7 @@
                             Delete Job
                             <i class="material-icons right">delete</i>
                         </button>
+                        <!--DELETE JOB MODAL-->
                         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
@@ -84,6 +87,7 @@
     </div>
 </div>
 {% endfor %}
+<!--PAGINATION-->
 <div class="container">
     <div class="row">
         <div class="col-12">

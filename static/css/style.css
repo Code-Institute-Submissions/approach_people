@@ -53,6 +53,11 @@
      background-color: #f9fbe7;
      border-radius: 15px;
 }
+/***JOBS-POSTED.HTML***/
+.card-img{
+    min-height: 70%;
+    max-height: 85%;
+}
 /***BUTTONS***/
 /*style taken from https://demos.themesfinity.com/css-buttons
 /*/
@@ -71,10 +76,6 @@
      width: 40%;
      height: 30%;
      color: #000;
-     font-size: 17px;
-}
- .btn-info{
-     border-radius: 100px;
      font-size: 17px;
 }
  @-webkit-keyframes AnimationName {
@@ -98,6 +99,28 @@
      100%{
          background-position:0% 31% 
     }
+}
+.btns {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-info{
+     border-radius: 100px;
+     font-size: 17px;
 }
  .search-btn{
      font-size: 18px;

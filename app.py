@@ -1,23 +1,26 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import os
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, \
+    flash
 from flask_pymongo import PyMongo
 import flask_pymongo
 import math
 from bson.objectid import ObjectId
-from os import path 
-if path.exists("env.py"):
-    import env 
- 
+from os import path
+if path.exists('env.py'):
+    import env
+
 app = Flask(__name__)
 
-
-app.config["MONGO_DBNAME"] = "approach_people"
-app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-
+app.config['MONGO_DBNAME'] = 'approach_people'
+app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
+
 # Create index for job titles in jobs collection
-mongo.db.jobs.create_index([("job_title", "text")])
+
+mongo.db.jobs.create_index([('job_title', 'text')])
 
 
 @app.route('/')
@@ -36,56 +39,72 @@ def about():
     return render_template('about.html')
 
 
-@app.route('/jobs_posted')
 # View all jobs that a user has added themselves and include pagination logic
+
+@app.route('/jobs_posted')
 def jobs_posted():
+
     # Find all jobs in Mongo DB
+
     jobs = mongo.db.jobs.find()
+
     # Pagination variable
+
     limit = 5
+
     # Find the requested page number (or default to page 1)
+
     page_number = int(request.args.get('page_number', 1))
     count = mongo.db.jobs.count_documents({})
+
     # identify how many job records to be skipped based on page number
+
     skip = (page_number - 1) * limit
+
     # skip relevant number of jobs
+
     jobs.skip(skip).limit(limit)
+
     # identify how many pages of results are needed
+
     pages = int(math.ceil(count / limit))
+
     # create a page range
+
     total_pages = range(1, pages + 1)
     return render_template('jobs-posted.html', jobs=jobs,
-                            page_number=page_number,
-                            pages=total_pages,
-                            count=count)
+                           page_number=page_number, pages=total_pages,
+                           count=count)
 
+
+# Post a job to Mongo DB
 
 @app.route('/post_job', methods=['GET', 'POST'])
-# Post a job to Mongo DB
 def post_job():
     if request.method == 'POST':
         jobs = mongo.db.jobs
         jobs.insert_one(request.form.to_dict())
         return redirect(url_for('jobs_posted'))
-    return render_template('post-job.html', 
-                            categories=mongo.db.categories.find())
+    return render_template('post-job.html',
+                           categories=mongo.db.categories.find())
 
+
+# Edit specific job
 
 @app.route('/edit_job/<job_id>')
-# Edit specific job
 def edit_job(job_id):
-    the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+    the_job = mongo.db.jobs.find_one({'_id': ObjectId(job_id)})
     all_categories = mongo.db.categories.find()
     return render_template('edit-job.html', job=the_job,
                            categories=all_categories)
 
 
-@app.route('/update_job/<job_id>', methods=["POST"])
-# Edit specific job by taking form inputs from edit-job.html 
+# Edit specific job by taking form inputs from edit-job.html
+
+@app.route('/update_job/<job_id>', methods=['POST'])
 def update_job(job_id):
     jobs = mongo.db.jobs
-    jobs.update({'_id': ObjectId(job_id)},
-    {
+    jobs.update({'_id': ObjectId(job_id)}, {
         'category_name': request.form.get('category_name'),
         'company_name': request.form.get('company_name'),
         'job_title': request.form.get('job_title'),
@@ -101,12 +120,13 @@ def update_job(job_id):
         'requirements': request.form.get('requirements'),
         'employment_type': request.form.get('employment_type'),
         'posted_by': request.form.get('posted_by'),
-    })
+        })
     return redirect(url_for('jobs_posted'))
 
 
-@app.route('/delete_job/<job_id>')
 # Delete specific job
+
+@app.route('/delete_job/<job_id>')
 def delete_job(job_id):
     mongo.db.jobs.remove({'_id': ObjectId(job_id)})
     return redirect(url_for('jobs_posted'))
@@ -117,27 +137,29 @@ def apply():
     return render_template('apply.html')
 
 
-@app.route('/job_details/<job_id>')
 # Getting job details from job posted
+
+@app.route('/job_details/<job_id>')
 def job_details(job_id):
-    the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
+    the_job = mongo.db.jobs.find_one({'_id': ObjectId(job_id)})
     return render_template('job-details.html', job=the_job)
 
 
-@app.route("/search", methods=["POST"])
 # Search logic implemented
+
+@app.route('/search', methods=['POST'])
 def search():
-    query = request.form.get("search")
+    query = request.form.get('search')
+
     # Search the database for the users search value, and find applicable jobs
-    search_results = mongo.db.jobs.find(
-        {"$text": {"$search": query}})
+
+    search_results = mongo.db.jobs.find({'$text': {'$search': query}})
+
     # Render the results of the search
-    return render_template("jobs-posted.html",
-                           jobs=search_results,
+
+    return render_template('jobs-posted.html', jobs=search_results,
                            search=True)
 
-
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-        port=int(os.environ.get('PORT')),
-        debug=True)
+    app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
+            )), debug=True)

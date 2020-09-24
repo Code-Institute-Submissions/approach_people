@@ -148,7 +148,7 @@ def search():
 
     # Search the database for the users search value, and find applicable jobs
 
-    search_results = mongo.db.jobs.find({'$text': {'$search': query}})
+    search_results = mongo.db.jobs.find({'$text': {'$search': query}}).sort("_id", -1)
 
     # Render the results of the search
 

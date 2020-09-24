@@ -37,16 +37,18 @@ def about():
 
 
 @app.route('/jobs_posted')
+# View all jobs that a user has added themselves and include pagination logic
 def jobs_posted():
+    # Find all jobs in Mongo DB
     jobs = mongo.db.jobs.find()
     # Pagination variable
     limit = 5
     # Find the requested page number (or default to page 1)
     page_number = int(request.args.get('page_number', 1))
     count = mongo.db.jobs.count_documents({})
-    # identify how many recipe records to be skipped based on page number
+    # identify how many job records to be skipped based on page number
     skip = (page_number - 1) * limit
-    # skip relevant number of recipes
+    # skip relevant number of jobs
     jobs.skip(skip).limit(limit)
     # identify how many pages of results are needed
     pages = int(math.ceil(count / limit))
@@ -59,6 +61,7 @@ def jobs_posted():
 
 
 @app.route('/post_job', methods=['GET', 'POST'])
+# Post a job to Mongo DB
 def post_job():
     if request.method == 'POST':
         jobs = mongo.db.jobs
@@ -69,6 +72,7 @@ def post_job():
 
 
 @app.route('/edit_job/<job_id>')
+# Edit specific job
 def edit_job(job_id):
     the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
     all_categories = mongo.db.categories.find()
@@ -77,6 +81,7 @@ def edit_job(job_id):
 
 
 @app.route('/update_job/<job_id>', methods=["POST"])
+# Edit specific job by taking form inputs from edit-job.html 
 def update_job(job_id):
     jobs = mongo.db.jobs
     jobs.update({'_id': ObjectId(job_id)},
@@ -101,6 +106,7 @@ def update_job(job_id):
 
 
 @app.route('/delete_job/<job_id>')
+# Delete specific job
 def delete_job(job_id):
     mongo.db.jobs.remove({'_id': ObjectId(job_id)})
     return redirect(url_for('jobs_posted'))
@@ -112,12 +118,14 @@ def apply():
 
 
 @app.route('/job_details/<job_id>')
+# Getting job details from job posted
 def job_details(job_id):
     the_job = mongo.db.jobs.find_one({"_id": ObjectId(job_id)})
     return render_template('job-details.html', job=the_job)
 
 
 @app.route("/search", methods=["POST"])
+# Search logic implemented
 def search():
     query = request.form.get("search")
     # Search the database for the users search value, and find applicable jobs

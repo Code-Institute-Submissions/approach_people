@@ -41,7 +41,7 @@ def jobs_posted():
 
     # Find all jobs in Mongo DB
 
-    jobs = mongo.db.jobs.find()
+    jobs = mongo.db.jobs.find().sort("_id", -1)
 
     # Pagination variable
 

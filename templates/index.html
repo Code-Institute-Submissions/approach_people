@@ -6,9 +6,11 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<h2 class="landing-text">You are the right talent!</h2>
-                <h1 class="landing-text">Find and post jobs</h1>
-                <a href="{{ url_for('jobs_posted') }}"><button type="button" class="btn btn-info landing-btn">LOOKING FOR A JOB?</button></a>
-				<a href="{{ url_for('post_job') }}"><button type="button" class="btn btn-info landing-btn">POST A JOB</button></a>
+                <h1 class="landing-text mb-4">Find and post jobs</h1>
+                <div class="btns">
+                <a href="{{ url_for('jobs_posted') }}" class="btn-info landing-btn text-decoration-none">LOOKING FOR A JOB?</a>
+				<a href="{{ url_for('post_job') }}" class="btn-info landing-btn text-decoration-none">POST A JOB</a>
+                </div>
 			</div>
 		</div>
 	</div>

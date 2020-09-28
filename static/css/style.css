@@ -108,6 +108,10 @@
     font-size: 25px;
     width: 60%;
 }
+.action-btn {
+    color: #fff;
+    background-color: #26a69a;
+}
 /***CONTACT-US AND APPLY MODAL***/
  .modal{
      background-color: transparent;

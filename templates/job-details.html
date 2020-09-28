@@ -14,7 +14,7 @@
                     <h6 class="card-title"><i class="material-icons prefix">attach_money</i>{{job.job_salary}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">business_center</i>{{job.employment_type}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">today</i>{{job.posted_date}}</h6>
-                    <div class="row">
+                    <div class="row justify-content-sm-center justify-content-md-around justify-content-xl-end">
                         <a href="{{url_for('apply')}}" class="mr-3 text-decoration-none waves-effect waves-light btn">
                                 Apply
                                 <i class="material-icons right">send</i>
@@ -41,7 +41,7 @@
                                         <h6>Are you sure about deleting this job?</h6>
                                     </div>
                                     <div class="modal-footer">
-                                         <a href="{{url_for('delete_job', job_id=job._id)}}" class="btns btn-danger text-decoration-none">
+                                         <a href="{{url_for('delete_job', job_id=job._id)}}" class="text-decoration-none waves-effect waves-light btn btn-danger">
                                         <i class="material-icons left">delete</i>Delete
                                         </a>
                                         <button type="cancel" class="btn btn-secondary" data-dismiss="modal"><i class="material-icons left">cancel</i>Cancel</button>

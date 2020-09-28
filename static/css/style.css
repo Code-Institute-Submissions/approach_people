@@ -73,6 +73,10 @@
      animation: AnimationName 3s ease infinite;
      border: medium none;
      padding: 20px;
+     color: #fff;
+}
+.landing-btn:hover{
+    color: #000;
 }
  @-webkit-keyframes AnimationName {
      0%{
@@ -159,7 +163,7 @@
 }
 
 
-
+/***MEDIA QUERIES***/
 @media screen and (min-width: 992px) {
     .job-container{
      width: 50%;

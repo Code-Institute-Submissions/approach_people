@@ -35,25 +35,18 @@
                     <h6 class="card-title"><i class="material-icons prefix">attach_money</i>{{job.job_salary}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">business_center</i>{{job.employment_type}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">today</i>{{job.posted_date}}</h6>
-                    <div class="row justify-content-end mr-3">
-                    <div class="col-sm-12 col-lg-3">
-                        <a href="{{url_for('apply')}}" class="mr-3 btn-info btns text-decoration-none">
+                        <a href="{{url_for('apply')}}" class="mr-3 text-decoration-none waves-effect waves-light btn">
                                 Apply
                                 <i class="material-icons right">send</i>
                         </a>
-                        </div>
-                        <div class="col-sm-12 col-lg-3">
-                        <a href="{{url_for('edit_job', job_id=job._id)}}" class="mr-3 btns btn-info text-decoration-none">
+                        <a href="{{url_for('edit_job', job_id=job._id)}}" class="mr-3 text-decoration-none waves-effect waves-light btn">
                                 Edit Job
                                 <i class="material-icons right">mode_edit</i>
                         </a>
-                        </div>
-                        <div class="col-sm-12 col-lg-3">
-                        <button class="btn btn-info" type="button" name="action" data-toggle="modal" data-target="#staticBackdrop">
+                        <button class="waves-effect waves-light btn" type="button" name="action" data-toggle="modal" data-target="#staticBackdrop">
                             Delete Job
                             <i class="material-icons right">delete</i>
                         </button>
-                        </div>
                         <!--DELETE JOB MODAL-->
                         <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
@@ -76,11 +69,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endfor %}
 <!--PAGINATION-->

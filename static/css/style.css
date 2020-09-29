@@ -37,7 +37,10 @@
      align-items:center;
 }
  .landing-text{
-     font-size: 60px;
+     font-size: 48px;
+     color: #F0FFFF;
+     font-weight: bold;
+     padding-right: 70px;
 }
  .jumbotron{
      background-color: #f9fbe7;
@@ -115,7 +118,8 @@
 }
  .col-12 i {
      font-size: 3em;
-     color: black;
+     color: #f9fbe7;
+     margin: 10px;
 }
  .col-12 i:hover{
      -webkit-transform: scale(1.2);

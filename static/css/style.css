@@ -48,8 +48,7 @@
 }
 /***JOBS-POSTED.HTML***/
 .card-img{
-    min-height: 70%;
-    max-height: 85%;
+   display: flex;
 }
 /***BUTTONS***/
 /*style taken from https://demos.themesfinity.com/css-buttons
@@ -148,9 +147,10 @@
      background-color: #17a2b8;
 }
  .card{
-     background-image: url("../img/job-background.jpg");
-     background-size: cover;
-     background-position: center;
+     background-color: #F0FFFF;
+}
+.card-img{
+    display: flex;
 }
  .job-details-img{
      width: 100%;

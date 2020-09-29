@@ -43,8 +43,8 @@
      padding-right: 70px;
 }
  .jumbotron{
-     background-color: #f9fbe7;
-     border-radius: 15px;
+     background-color: #F0FFFF;
+     box-shadow: -1px 1px 7px 1px grey;
 }
 /***JOBS-POSTED.HTML***/
 .card-img{
@@ -118,7 +118,7 @@
 }
  .col-12 i {
      font-size: 3em;
-     color: #f9fbe7;
+     color: #F0FFFF;
      margin: 10px;
 }
  .col-12 i:hover{

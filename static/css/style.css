@@ -10,7 +10,7 @@
 }
  .nav-wrapper a{
      text-decoration: none;
-     color: #F0FFFF;
+     color: #F8F8FF;
      font-size: 17px;
 }
  .nav-wrapper a h2 {
@@ -38,12 +38,12 @@
 }
  .landing-text{
      font-size: 48px;
-     color: #F0FFFF;
+     color:#F8F8FF;
      font-weight: bold;
      padding-right: 70px;
 }
  .jumbotron{
-     background-color: #F0FFFF;
+     background-color:#F8F8FF;
      box-shadow: -1px 1px 7px 1px grey;
 }
 /***JOBS-POSTED.HTML***/
@@ -117,7 +117,7 @@
 }
  .col-12 i {
      font-size: 3em;
-     color: #F0FFFF;
+     color: #F8F8FF;
      margin: 10px;
 }
  .col-12 i:hover{
@@ -147,7 +147,7 @@
      background-color: #17a2b8;
 }
  .card{
-     background-color: #F0FFFF;
+     background-color: #F8F8FF;
 }
 .card-img{
     display: flex;

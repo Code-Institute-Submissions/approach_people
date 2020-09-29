@@ -1,8 +1,6 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
+
 import os
-from flask import Flask, render_template, redirect, request, url_for, \
-    flash
+from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 import flask_pymongo
 import math
@@ -19,7 +17,6 @@ app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 mongo = PyMongo(app)
 
 # Create index for job titles in jobs collection
-
 mongo.db.jobs.create_index([('job_title', 'text')])
 
 
@@ -35,37 +32,23 @@ def contact_us():
 
 
 # View all jobs that a user has added themselves and include pagination logic
-
 @app.route('/jobs_posted')
 def jobs_posted():
 
     # Find all jobs in Mongo DB
-
     jobs = mongo.db.jobs.find().sort("_id", -1)
-
     # Pagination variable
-
     limit = 5
-
     # Find the requested page number (or default to page 1)
-
     page_number = int(request.args.get('page_number', 1))
     count = mongo.db.jobs.count_documents({})
-
     # identify how many job records to be skipped based on page number
-
     skip = (page_number - 1) * limit
-
     # skip relevant number of jobs
-
     jobs.skip(skip).limit(limit)
-
     # identify how many pages of results are needed
-
     pages = int(math.ceil(count / limit))
-
     # create a page range
-
     total_pages = range(1, pages + 1)
     return render_template('jobs-posted.html', jobs=jobs,
                            page_number=page_number, pages=total_pages,
@@ -73,7 +56,6 @@ def jobs_posted():
 
 
 # Post a job to Mongo DB
-
 @app.route('/post_job', methods=['GET', 'POST'])
 def post_job():
     if request.method == 'POST':
@@ -85,7 +67,6 @@ def post_job():
 
 
 # Edit specific job
-
 @app.route('/edit_job/<job_id>')
 def edit_job(job_id):
     the_job = mongo.db.jobs.find_one({'_id': ObjectId(job_id)})
@@ -95,7 +76,6 @@ def edit_job(job_id):
 
 
 # Edit specific job by taking form inputs from edit-job.html
-
 @app.route('/update_job/<job_id>', methods=['POST'])
 def update_job(job_id):
     jobs = mongo.db.jobs
@@ -120,7 +100,6 @@ def update_job(job_id):
 
 
 # Delete specific job
-
 @app.route('/delete_job/<job_id>')
 def delete_job(job_id):
     mongo.db.jobs.remove({'_id': ObjectId(job_id)})
@@ -133,7 +112,6 @@ def apply():
 
 
 # Getting job details from job posted
-
 @app.route('/job_details/<job_id>')
 def job_details(job_id):
     the_job = mongo.db.jobs.find_one({'_id': ObjectId(job_id)})
@@ -141,15 +119,11 @@ def job_details(job_id):
 
 
 # Search logic implemented
-
 @app.route('/search', methods=['POST'])
 def search():
     query = request.form.get('search')
-
     # Search the database for the users search value, and find applicable jobs
-
     search_results = mongo.db.jobs.find({'$text': {'$search': query}}).sort("_id", -1)
-
     # Render the results of the search
     return render_template('jobs-posted.html', jobs=search_results)
 

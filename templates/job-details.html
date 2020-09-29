@@ -2,11 +2,17 @@
 <div class="container job-container mt-5">
 <h2 class="text-center mb-5 font-weight-bolder">{{job.job_title}} in {{job.company_name}}</h2>
     <div class="card mb-3">
-        <div class="row no-gutters">
-            <div class="col-4">
+        <div class="row no-gutters mb-0">
+            {% if job.image_url %}
+            <div class="col-md-5 card-img">
                 <img src="{{job.image_url}}" class="card-img" alt="Logo" />
             </div>
-            <div class="col-8">
+            {% else %}
+            <div class="col-md-5 card-img">
+                <img src="{{url_for('static', filename='img/default-image.jpg')}}" class="card-img" alt="Logo" />
+            </div>
+            {% endif %}
+            <div class="col-md-7">
                 <div class="card-body">
                     <a href="{{url_for('job_details', job_id=job._id)}}"><h4>{{job.job_title}}</h4></a>
                     <h5 class="card-title">{{job.company_name}}</h5>

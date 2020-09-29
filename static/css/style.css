@@ -17,16 +17,6 @@
      font-family: 'Do Hyeon', sans-serif;
      font-size: 45px;
 }
- .nav-wrapper a:hover{
-     -webkit-transform: scale(1.1);
-     -ms-transform: scale(1.1);
-     transform: scale(1.1);
-     -webkit-transition: -webkit-transform .2s;
-     transition: -webkit-transform .2s;
-     -o-transition: transform .2s;
-     transition: transform .2s;
-     transition: transform .2s, -webkit-transform .2s;
-}
 /***INDEX.HTML***/
  .hero-image{
      background-image: url("../img/hero-image.jpg");

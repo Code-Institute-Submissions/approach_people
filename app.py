@@ -106,11 +106,6 @@ def delete_job(job_id):
     return redirect(url_for('jobs_posted'))
 
 
-@app.route('/apply')
-def apply():
-    return render_template('apply.html')
-
-
 # Getting job details from job posted
 @app.route('/job_details/<job_id>')
 def job_details(job_id):

@@ -122,6 +122,23 @@ def search():
     # Render the results of the search
     return render_template('jobs-posted.html', jobs=search_results)
 
+
+# Error Handlers
+@app.errorhandler(403)
+def page_forbidden(error):
+    return render_template('error.html', error=error)
+
+
+@app.errorhandler(404)
+def response_404(error):
+    return render_template('error.html', error=error)
+
+
+@app.errorhandler(500)
+def response_500(error):
+    return render_template('error.html', error=error)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
             )), debug=True)

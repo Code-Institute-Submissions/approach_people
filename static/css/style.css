@@ -103,6 +103,9 @@
     font-size: 25px;
     width: 60%;
 }
+.search-btn i{
+    padding-top: 10px;
+}
 .action-btn {
     color: #fff;
     background-color: #26a69a;
@@ -112,6 +115,9 @@
      background-color: transparent;
      -webkit-box-shadow: none;
      box-shadow: none;
+}
+.modal-footer a i{
+    padding-bottom: 10px;
 }
 /***FOOTER***/
  footer{

@@ -9,7 +9,7 @@
     color: grey;
 }
 /***NAVIGATION BAR***/
- .nav-wrapper{
+ .nav-wrapper, .sidenav{
      background-color: #17a2b8;
 }
  .nav-wrapper a{
@@ -20,6 +20,9 @@
  .nav-wrapper a h2 {
      font-family: 'Do Hyeon', sans-serif;
      font-size: 45px;
+}
+.sidenav li a{
+    color: #F8F8FF; 
 }
 /***INDEX.HTML***/
  .hero-image{

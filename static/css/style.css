@@ -4,6 +4,10 @@
      font-family: 'Noto Sans KR', sans-serif;
      background-color: #e0f2f1;
 }
+/***PLACEHOLDER IN POST-JOB.HTML***/
+.dates ::placeholder{
+    color: grey;
+}
 /***NAVIGATION BAR***/
  .nav-wrapper{
      background-color: #17a2b8;

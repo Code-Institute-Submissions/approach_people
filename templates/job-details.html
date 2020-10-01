@@ -14,8 +14,8 @@
             {% endif %}
             <div class="col-md-7">
                 <div class="card-body">
-                    <a href="{{url_for('job_details', job_id=job._id)}}"><h4>{{job.job_title}}</h4></a>
-                    <h5 class="card-title">{{job.company_name}}</h5>
+                    <a href="{{url_for('job_details', job_id=job._id)}}"><h3>{{job.job_title}}</h3></a>
+                    <h4 class="card-title">{{job.company_name}}</h4>
                     <h6 class="card-title"><i class="material-icons prefix">location_on</i>{{job.job_location}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">euro_symbol</i>{{job.job_salary}}</h6>
                     <h6 class="card-title"><i class="material-icons prefix">business_center</i>{{job.employment_type}}</h6>

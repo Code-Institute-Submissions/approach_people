@@ -1,8 +1,14 @@
 /* * Prefixed by https://autoprefixer.github.io * PostCSS: v7.0.29, * Autoprefixer: v9.7.6 * Browsers: last 4 version */
  @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR&display=swap');
+ html{
+     height: 100%;
+ }
  body{
      font-family: 'Noto Sans KR', sans-serif;
      background-color: #e0f2f1;
+     display: flex;
+     flex-direction: column;
+     min-height: 100%;
 }
 /***PLACEHOLDER IN POST-JOB.HTML***/
 .dates ::placeholder{
@@ -123,6 +129,7 @@
  footer{
      background-color: #17a2b8;
      padding: 20px;
+     margin-top: auto;
 }
  .col-12 i {
      font-size: 3em;
@@ -169,8 +176,6 @@
      width: 50%;
      height: 50%;
 }
-
-
 /***MEDIA QUERIES***/
 @media screen and (min-width: 992px) {
     .job-container{

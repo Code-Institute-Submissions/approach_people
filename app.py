@@ -34,7 +34,6 @@ def contact_us():
 # View all jobs that a user has added themselves and include pagination logic
 @app.route('/jobs_posted')
 def jobs_posted():
-
     # Find all jobs in Mongo DB
     jobs = mongo.db.jobs.find().sort("_id", -1)
     # Pagination variable
@@ -138,4 +137,4 @@ def response_500(error):
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
-            )), debug=False)
+            )), debug=True)

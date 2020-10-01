@@ -35,7 +35,7 @@
      background-image: url("../img/hero-image.jpg");
      background-size: cover;
      background-position: center;
-     min-height: 90vh;
+     min-height: 100vh;
      background-attachment: fixed;
 }
  .landing-page{

@@ -66,37 +66,34 @@ def post_job():
                            categories=mongo.db.categories.find())
 
 
-# Edit specific job
-@app.route('/edit_job/<job_id>')
-def edit_job(job_id):
-    the_job = mongo.db.jobs.find_one({'_id': ObjectId(job_id)})
-    all_categories = mongo.db.categories.find()
-    return render_template('edit-job.html', job=the_job,
-                           categories=all_categories)
-
-
 # Edit specific job by taking form inputs from edit-job.html
-@app.route('/update_job/<job_id>', methods=['POST'])
+@app.route('/update_job/<job_id>', methods=['GET', 'POST'])
 def update_job(job_id):
-    jobs = mongo.db.jobs
-    jobs.update({'_id': ObjectId(job_id)}, {
-        'category_name': request.form.get('category_name'),
-        'company_name': request.form.get('company_name'),
-        'job_title': request.form.get('job_title'),
-        'email': request.form.get('email'),
-        'telephone': request.form.get('telephone'),
-        'job_description': request.form.get('job_description'),
-        'job_location': request.form.get('job_location'),
-        'posted_date': request.form.get('posted_date'),
-        'due_date': request.form.get('due_date'),
-        'job_salary': request.form.get('job_salary'),
-        'tags': request.form.get('tags'),
-        'image_url': request.form.get('image_url'),
-        'requirements': request.form.get('requirements'),
-        'employment_type': request.form.get('employment_type'),
-        'posted_by': request.form.get('posted_by'),
-        })
-    return redirect(url_for('jobs_posted'))
+    if request.method == 'POST':
+        jobs = mongo.db.jobs
+        jobs.update({'_id': ObjectId(job_id)}, {
+            'category_name': request.form.get('category_name'),
+            'company_name': request.form.get('company_name'),
+            'job_title': request.form.get('job_title'),
+            'email': request.form.get('email'),
+            'telephone': request.form.get('telephone'),
+            'job_description': request.form.get('job_description'),
+            'job_location': request.form.get('job_location'),
+            'posted_date': request.form.get('posted_date'),
+            'due_date': request.form.get('due_date'),
+            'job_salary': request.form.get('job_salary'),
+            'tags': request.form.get('tags'),
+            'image_url': request.form.get('image_url'),
+            'requirements': request.form.get('requirements'),
+            'employment_type': request.form.get('employment_type'),
+            'posted_by': request.form.get('posted_by'),
+            })
+        return redirect(url_for('jobs_posted'))
+    else:
+        the_job = mongo.db.jobs.find_one({'_id': ObjectId(job_id)})
+        all_categories = mongo.db.categories.find()
+        return render_template('edit-job.html', job=the_job,
+                           categories=all_categories)
 
 
 # Delete specific job
@@ -141,4 +138,4 @@ def response_500(error):
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT'
-            )), debug=True)
+            )), debug=False)

@@ -182,3 +182,14 @@
      width: 50%;
     }
 }
+@media screen and (max-width: 426px) {
+    .action-btns {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+}
+    .action-btn{
+        width: 80%;
+        margin: 5px;
+    }
+}

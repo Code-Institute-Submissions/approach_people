@@ -192,7 +192,9 @@
         width: 80%;
         margin: 5px;
     }
+}
+@media screen and (max-width: 575px){
     .btn-info{
-        margin: 5px;
+        margin-left: 5px;
     }
 }

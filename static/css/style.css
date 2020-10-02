@@ -54,6 +54,7 @@
      color:#F8F8FF;
      font-weight: bold;
      padding-right: 70px;
+     text-shadow: 1px 1px #000;
 }
  .jumbotron{
      background-color:#F8F8FF;
@@ -197,4 +198,8 @@
     .btn-info{
         margin-left: 5px;
     }
+    .landing-text{
+        
+    }
 }
+

@@ -190,7 +190,7 @@
         align-content: center;
 }
     .action-btn{
-        width: 80%;
+        width: 70%;
         margin: 5px;
     }
 }
@@ -198,8 +198,10 @@
     .btn-info{
         margin-left: 5px;
     }
-    .landing-text{
-        
+    
+}
+@media screen and (max-width: 426px){
+    .action-btn i{
+        margin-left: 0;
     }
 }
-

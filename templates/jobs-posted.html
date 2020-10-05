@@ -18,7 +18,7 @@
     </form>
     </div>
 </div>
-{% if count == 0 %}
+{% if count == 0 or query == "" %}
 <h3 class="red-text text-center">No results were found for this search, please try again.</h3>
 {% endif %}
 {% for job in jobs %}

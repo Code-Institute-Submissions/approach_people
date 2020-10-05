@@ -179,11 +179,6 @@
      height: 50%;
 }
 /***MEDIA QUERIES***/
-@media screen and (min-width: 992px) {
-    .job-container{
-     width: 50%;
-    }
-}
 @media screen and (max-width: 426px) {
     .action-btns {
         display: flex;

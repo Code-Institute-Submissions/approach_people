@@ -112,11 +112,14 @@ def job_details(job_id):
 # Search logic implemented
 @app.route('/search', methods=['POST'])
 def search():
+    jobs = mongo.db.jobs
     query = request.form.get('search')
     # Search the database for the users search value, and find applicable jobs
     search_results = mongo.db.jobs.find({'$text': {'$search': query}}).sort("_id", -1)
+    count = jobs.count_documents(
+        {"$text": {"$search": request.form["search"]}})
     # Render the results of the search
-    return render_template('jobs-posted.html', jobs=search_results)
+    return render_template('jobs-posted.html', jobs=search_results, count=count)
 
 
 # Error Handlers

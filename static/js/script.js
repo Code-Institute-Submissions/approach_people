@@ -28,11 +28,6 @@ $(".description-btn").click(function() {
     $(".description").removeClass("d-none");
     $(".company-details").addClass("d-none");
 });
-// Showing modal once Apply form is submitted
-$("#apply").submit(function(e) {
-    $('.modal').modal('show');
-    return false;
-});
 // Reload page once close button is clicked in modal
 $(".close-modal").click(function() {
     location.reload();

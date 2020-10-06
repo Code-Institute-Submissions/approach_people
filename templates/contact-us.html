@@ -1,11 +1,11 @@
 {% extends 'base.html'%} {% block content %}
 <!--CONTACT US FORM-->
 <div class="container contact-us mb-5">
-<div class="row text-center">
-    <div class="col-12">
-<h1 class="text-center mt-5 font-weight-bold">Contact Us</h1>
-</div>
-</div>
+    <div class="row text-center">
+        <div class="col-12">
+            <h1 class="text-center mt-5 font-weight-bold">Contact Us</h1>
+        </div>
+    </div>
     <div class="row">
         <form action="{{ url_for('contact_us') }}" onsubmit="return sendMail(this);" class="col s12 mt-5" id="contact-us">
             <div class="row">
@@ -44,11 +44,12 @@
                 </div>
             </div>
             <div class="row">
-                <button class="btn btn-info" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-            </button>
-            <!--MODAL APPEARING ON FORM SUBMIT-->
-            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <button class="btn btn-info" type="submit" name="action">
+                    Submit
+                    <i class="material-icons right">send</i>
+                </button>
+                <!--MODAL APPEARING ON FORM SUBMIT-->
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">

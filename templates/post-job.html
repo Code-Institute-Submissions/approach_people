@@ -1,120 +1,120 @@
-{% extends 'base.html'%}
-{% block content %}
+{% extends 'base.html'%} {% block content %}
 <!--POST JOB FORM-->
 <div class="container mt-5">
-<h1 class="text-center mb-5 font-weight-bold">Post Job</h1>
-<div class="row">
-    <form action="{{ url_for('post_job') }}" method="POST" class="col s12">
+    <h1 class="text-center mb-5 font-weight-bold">Post Job</h1>
     <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">business_center</i>
-          <select id="category_name" name="category_name">
-          <option value="" disabled selected>Choose Sector</option>
-            {% for cat in categories %}
-                      <option value="{{cat.category_name}}">{{cat.category_name}}</option>
-            {% endfor %}
-        </select>
-          <label for="sector">Sector</label>
-        </div>
-       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">business</i>
-          <input id="company_name" name="company_name" type="text" class="validate" required>
-          <label for="company_name">Company Name</label>
-        </div>
-       </div>
-       <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-          <input id="job_title" name="job_title" type="text" class="validate" required>
-          <label for="job_title">Job Title</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">euro_symbol</i>
-          <input id="job_salary" name="job_salary" type="text" class="validate job-salary" required>
-          <label for="job_salary">Job Salary (Yearly)  €</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">email</i>
-          <input id="email" name="email" type="email" class="validate" required>
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">phone</i>
-          <input id="telephone" name="telephone" type="tel" class="validate" required>
-          <label for="icon_telephone">Telephone</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">assignment</i>
-          <textarea id="textarea1" name="job_description" class="materialize-textarea" required></textarea>
-          <label for="textarea1">Job Description</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">assignment</i>
-          <textarea id="textarea2" name="requirements" class="materialize-textarea" required></textarea>
-          <label for="textarea1">Requirements</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="material-icons prefix">business_center</i>
-          <select id="employment_type" name="employment_type">
-          <option value="" disabled selected>Choose Employment Type</option>
-                      <option value="Full Time">Full Time</option>
-                      <option value="Part Time">Part Time</option>
-        </select>
-          <label for="employment_type">Employment Type</label>
-        </div>
-       </div>
-      <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">location_on</i>
-          <input id="job_location" name="job_location" type="text" class="validate" required>
-          <label for="job_location">Job Location</label>
-        </div>
-      </div>
-      <div class="row">
-            <div class="input-field col s6 dates">
-                <i class="material-icons prefix">today</i>
-                <input id="posted_date" name="posted_date" type="text" class="datepicker" placeholder="Date Posted" required>
+        <form action="{{ url_for('post_job') }}" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">business_center</i>
+                    <select id="category_name" name="category_name">
+                        <option value="" disabled selected>Choose Sector</option>
+                        {% for cat in categories %}
+                        <option value="{{cat.category_name}}">{{cat.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="sector">Sector</label>
+                </div>
             </div>
-        
-            <div class="input-field col s6 dates">
-                <i class="material-icons prefix">today</i>
-                <input id="due_date" name="due_date" type="text" class="datepicker" placeholder="Due Date" required>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">business</i>
+                    <input id="company_name" name="company_name" type="text" class="validate" required />
+                    <label for="company_name">Company Name</label>
+                </div>
             </div>
-        </div>
-        <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">account_circle</i>
-          <input id="posted_by" name="posted_by" type="text" class="validate" required>
-          <label for="posted_by">Posted By</label>
-        </div>
-      </div>
-         <div class="row">
-        <div class="input-field col s12">
-        <i class="material-icons prefix">insert_link</i>
-          <input id="image_url" name="image_url" type="text" class="validate">
-          <label for="image_url">Logo URL</label>
-        </div>
-      </div>
-      <div class="row">
-            <button class="btn btn-info" type="submit" name="action">Add Job
-            <i class="material-icons right">playlist_add</i>
-            </button>
-        </div>
-    </form>
-  </div>
-  </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="job_title" name="job_title" type="text" class="validate" required />
+                    <label for="job_title">Job Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">euro_symbol</i>
+                    <input id="job_salary" name="job_salary" type="text" class="validate job-salary" required />
+                    <label for="job_salary">Job Salary (Yearly) €</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input id="email" name="email" type="email" class="validate" required />
+                    <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">phone</i>
+                    <input id="telephone" name="telephone" type="tel" class="validate" required />
+                    <label for="icon_telephone">Telephone</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+                    <textarea id="textarea1" name="job_description" class="materialize-textarea" required></textarea>
+                    <label for="textarea1">Job Description</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">assignment</i>
+                    <textarea id="textarea2" name="requirements" class="materialize-textarea" required></textarea>
+                    <label for="textarea1">Requirements</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">business_center</i>
+                    <select id="employment_type" name="employment_type">
+                        <option value="" disabled selected>Choose Employment Type</option>
+                        <option value="Full Time">Full Time</option>
+                        <option value="Part Time">Part Time</option>
+                    </select>
+                    <label for="employment_type">Employment Type</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">location_on</i>
+                    <input id="job_location" name="job_location" type="text" class="validate" required />
+                    <label for="job_location">Job Location</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 dates">
+                    <i class="material-icons prefix">today</i>
+                    <input id="posted_date" name="posted_date" type="text" class="datepicker" placeholder="Date Posted" required />
+                </div>
+
+                <div class="input-field col s6 dates">
+                    <i class="material-icons prefix">today</i>
+                    <input id="due_date" name="due_date" type="text" class="datepicker" placeholder="Due Date" required />
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="posted_by" name="posted_by" type="text" class="validate" required />
+                    <label for="posted_by">Posted By</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">insert_link</i>
+                    <input id="image_url" name="image_url" type="text" class="validate" />
+                    <label for="image_url">Logo URL</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-info" type="submit" name="action">
+                    Add Job
+                    <i class="material-icons right">playlist_add</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}

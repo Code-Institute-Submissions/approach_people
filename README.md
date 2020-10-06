@@ -3,7 +3,7 @@
 ### [Live Heroku App Link](https://approach-people.herokuapp.com/)
 ### [GitHub repository Link](https://github.com/todorr92/approach_people) 
 
-![alt text](wireframes/Mockup_Generator.png "Mockup Generator")
+![alt text](wireframes/Mockup_Generator.pdf "Mockup Generator")
 
 ## Summary
 #### Approach People is an application that allows users to post jobs. Each entry can be easily searchable, and also updated or deleted.
@@ -52,9 +52,9 @@
 * Goes into more information about specific job clicked by showing job description, job requirements, company telephone number, email address, due date and posted by
 #### Apply
 * By clicking on Apply button default mailing service will promt to open with pre set subject and email to address using mailto function.
-#### Edit
+#### Edit Job
 * Takes all information from Mongo DB, once change is made DB is updated
-#### Delete
+#### Delete Job
 * Deletes a job from DB, but before doing so, pop up modal is triggered asking user to confirm the action.
 #### Contact Us
 * Contact us form connected with my email address using EmailJS
@@ -74,6 +74,25 @@
 + [Gitpod](https://gitpod.io/workspaces/)
 + [EmailJS](https://www.emailjs.com/)
 + [Mockup Generator](https://techsini.com/multi-mockup/index.php)
+## Testing
+#### The test procedures and the key issues of the tests are written in the file [testing.md](testing.md)
+## Deployment
+### This website was deployed using GitHub Pages following steps below:
+1. From the menu items near the top of the page, select Settings.
+2. Scroll down to the GitHub Pages section.
+3. Under Source click the drop-down menu labelled None and select Master Branch
+4. On selecting Master Branch the page is automatically refreshed, the website is now deployed.
+5. Scroll back down to the GitHub Pages section to retrieve the link to the deployed website.
+### Run this project locally
+#### Clone this project from GitHub:
+1. Under the repository name, click "Clone or download".
+2. In the Clone with HTTPs section, copy the clone URL for the repository.
+3. In your local IDE open Git Bash.
+4. Change the current working directory to the location where you want the cloned directory to be made.
+5. Type git clone, and then paste the URL you copied in Step 3.
+6. Press Enter. Your local clone will be created.
+Click [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further reading and troubleshooting on cloning a repository from GitHub.
+
 # Credits
 
 ### Content

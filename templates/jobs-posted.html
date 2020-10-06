@@ -1,32 +1,31 @@
 {% extends 'base.html'%} {% block content %}
 <!--SEARCH BAR-->
 <div class="container mt-5">
-<div class="jumbotron">
-<h1 class="text-center font-weight-bold">Jobs Posted</h1>
-    <form action="{{ url_for('search') }}" method="POST">
-        <div class="row text-center">
-            <div class="col-sm-12 col-lg-8">
-                <div class="input-field">
-                    <i class="material-icons prefix">search</i>
-                    <input name="search" type="text" placeholder="Search for your dream Job!" class="validate"/>
+    <div class="jumbotron">
+        <h1 class="text-center font-weight-bold">Jobs Posted</h1>
+        <form action="{{ url_for('search') }}" method="POST">
+            <div class="row text-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="input-field">
+                        <i class="material-icons prefix">search</i>
+                        <input name="search" type="text" placeholder="Search for your dream Job!" class="validate" />
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4 mt-3">
+                    <button class="btns btn-info search-btn" type="submit" name="search" value="search">Search<i class="material-icons right">search</i></button>
                 </div>
             </div>
-            <div class="col-sm-12 col-lg-4 mt-3">
-                  <button class="btns btn-info search-btn" type="submit" name="search" value="search">Search<i class="material-icons right">search</i></button>
-            </div>
-        </div>
-    </form>
+        </form>
     </div>
 </div>
 {% if count == 0 or query == "" %}
 <h3 class="red-text text-center">No results were found for this search, please try again.</h3>
-{% endif %}
-{% for job in jobs %}
+{% endif %} {% for job in jobs %}
 <!--JOB DETAILS(showcase only, full description in job-details.html)-->
 <div class="container">
     <div class="card mb-3">
         <div class="row no-gutters mb-0">
-        {% if job.image_url %}
+            {% if job.image_url %}
             <div class="col-md-5 card-img">
                 <img src="{{job.image_url}}" class="card-img" alt="Logo" />
             </div>
@@ -45,12 +44,12 @@
                     <h6 class="card-title"><i class="material-icons prefix">today</i>{{job.posted_date}}</h6>
                     <div class="row justify-content-sm-center justify-content-md-end action-btns">
                         <a href="mailto:recruit@approachpeople.com?subject=Job Application" class="mr-3 text-decoration-none waves-effect waves-light btn action-btn">
-                                Apply
-                                <i class="material-icons right">send</i>
+                            Apply
+                            <i class="material-icons right">send</i>
                         </a>
                         <a href="{{url_for('update_job', job_id=job._id)}}" class="mr-3 text-decoration-none waves-effect waves-light btn action-btn">
-                                Edit Job
-                                <i class="material-icons right">mode_edit</i>
+                            Edit Job
+                            <i class="material-icons right">mode_edit</i>
                         </a>
                         <button class="waves-effect waves-light btn action-btn" type="button" name="action" data-toggle="modal" data-target="#staticBackdrop">
                             Delete Job
@@ -70,35 +69,31 @@
                                         <h6>Are you sure about deleting this job?</h6>
                                     </div>
                                     <div class="modal-footer">
-                                        <a href="{{url_for('delete_job', job_id=job._id)}}" class="text-decoration-none waves-effect waves-light btn btn-danger">
-                                        <i class="material-icons left">delete</i>Delete
-                                        </a>
+                                        <a href="{{url_for('delete_job', job_id=job._id)}}" class="text-decoration-none waves-effect waves-light btn btn-danger"> <i class="material-icons left">delete</i>Delete </a>
                                         <button type="cancel" class="btn btn-secondary ml-3" data-dismiss="modal"><i class="material-icons left">cancel</i>Cancel</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 {% endfor %}
 <!--PAGINATION-->
 <div class="container">
     <div class="row">
         <div class="col-12">
-        <ul class="pagination justify-content-center">
-    {% for page in pages %}
-            {% if page == page_number %}
-            <li class="active green"><a href="#!">{{ page }}</a></li>
-            {% else %}
-            <li class="waves-effect"><a href="{{ url_for('jobs_posted', page_number=page) }}">{{ page }}</a></li>
-            {% endif %}
-        {% endfor %}  
-  </ul>
+            <ul class="pagination justify-content-center">
+                {% for page in pages %} {% if page == page_number %}
+                <li class="active green"><a href="#!">{{ page }}</a></li>
+                {% else %}
+                <li class="waves-effect"><a href="{{ url_for('jobs_posted', page_number=page) }}">{{ page }}</a></li>
+                {% endif %} {% endfor %}
+            </ul>
         </div>
     </div>
-</div> 
+</div>
 {% endblock %}

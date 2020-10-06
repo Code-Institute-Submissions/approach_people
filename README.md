@@ -3,7 +3,14 @@
 ### [Live Heroku App Link](https://approach-people.herokuapp.com/)
 ### [GitHub repository Link](https://github.com/todorr92/approach_people) 
 
-![alt text](wireframes/Mockup_Generator.pdf "Mockup Generator")
+![alt text](wireframes/index.png "Landing Page")
+![alt text](wireframes/index-mobile.png "Landing Page on Mobile")
+![alt text](wireframes/looking-for-a-job.png "Jobs Posted")
+![alt text](wireframes/jobs-posted-mobile.png "Jobs Posted on Mobile")
+![alt text](wireframes/post-a-job.png "Post a Job")
+![alt text](wireframes/post-job-mobile.png "Post a Job on Mobile")
+![alt text](wireframes/contact-us.png "Contact Us")
+![alt text](wireframes/contact-us-mobile.png "Contact Us on Mobile")
 
 ## Summary
 #### Approach People is an application that allows users to post jobs. Each entry can be easily searchable, and also updated or deleted.

@@ -94,11 +94,11 @@
 4. Change the current working directory to the location where you want the cloned directory to be made.
 5. Type git clone, and then paste the URL you copied in Step 3.
 6. Press Enter. Your local clone will be created.
-##### Next you will need to install all the projects dependencies - (type pip install -r requirements.txt).
+##### Next you will need to install all the projects dependencies type - (pip install -r requirements.txt).
 ##### If you add any new packages to the project use - (pip freeze --local > requirements.txt) to update the [requirements.txt](requirements.txt) file with new dependencies.
-#### Environment Variables
-##### In your local IDE you can create an env.py file to store the MONGO_DBNAME, MONGO_URI & SECRET_KEY variables.
-##### Add the following code to your env.py and insert your applicable variables.
+#### Environment Variables:
+1. In your local IDE you can create an env.py file to store the MONGO_DBNAME, MONGO_URI & SECRET_KEY variables.
+2. Add the following code to your env.py and insert your applicable variables.
 ###### import os
 ###### os.environ["SECRET_KEY"] = "Your secret key"
 ###### os.environ["MONGO_URI"] = "Your mongo_uri"

@@ -9,7 +9,7 @@
 ### 1. [UX](#ux)
 ### 2. [Features](#features)
 ### 3. [Technologies Applied](#technologies-applied)
-### 4. [Tests](#tests) 
+### 4. [Tests](#testing) 
 ### 5. [Deployment](#deployment)
 ### 6. [Credits](#credits)
 # UX

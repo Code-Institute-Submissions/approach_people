@@ -11,12 +11,12 @@
 ### Bugs Encountered & Fixed
 #### Throughout development, there were many tiny fixes found by completing ongoing checks of functionality.
 * Constant iterations of styling to fix responsiveness issues across devices.
-* Contact form was not being refreshed once the form was submitted
- * Once submit button was clicked, modal appeared but content from form stayed, to fix this issue, on click event was added on close modal button to reloads the website, works now with no issues.
+* Contact form was not being refreshed once the form was submitted.
+  * Once submit button was clicked, modal appeared but content from form stayed, to fix this issue, on click event was added on close modal button to reloads the website, works now with no issues.
 * Labels for datepickers and search bar were causing an issue while clicking on it. Focus was off so click had to be correctly on the line for it to work.
- * Fix for it was to change labels for placeholders.
-* Search bar was not showing html text if no results were in DB
- * Had to count all documents in DB to make this work, once variable was declared and proper logic was in jobs-posted.html, this issue was fixed.
+  * Fix for it was to change labels for placeholders.
+* Search bar was not showing html feedback if no results were in DB
+  * Had to count all documents in DB to make this work, once variable was declared and proper logic was in jobs-posted.html, this issue was fixed.
 ### Functional Testing
 #### Landing Page
 * Successfully tested that all nav links redirect to the appropriate route.
@@ -27,11 +27,11 @@
 * Apply - Redirects to a default mailing service, no issues there.
 * Edit Job - Takes all information from DB regarding clicked job and displays correctly in type of form, any of the field can be changed
 * Delete Job - Pop up modal appears on click asking user to confirm selected action, if user confirms the action, job is deleted successfully from DB, otherwise user is back to all Jobs Posted.
-* Job Title - Clicking on it, additional informatio is shown about clicked job, no issues here, Apply, Edit Job and Delete Job are working normally with no issues.
+* Job Title - Clicking on it, additional information is shown about clicked job, no issues here, Apply, Edit Job and Delete Job are working normally with no issues.
 * Pagination - It is showing correct number of jobs per page, and also creates another number if there is more jobs.
 #### Post a Job
-* Showing correct categories from DB
-* Takes all user input without any issue, if user does not provide url, default img is loaded
+* Showing correct categories from DB.
+* Takes all user input without any issue, if user does not provide url, default img is loaded.
 #### Contact Us
 * Form is connected with my email address using EmailJS, once user provides all information and it is passing form validation, pop up modal appears giving feedback to the user while I am recieving email with users information.
 ## Code Validation

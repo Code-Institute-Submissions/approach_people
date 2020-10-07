@@ -1,9 +1,7 @@
 # Approach People
-
-### [Live Heroku App Link](https://approach-people.herokuapp.com/)
-### [GitHub repository Link](https://github.com/todorr92/approach_people) 
+### [Live Heroku App Link](https://approach-people.herokuapp.com/){:target="_blank"}
+### [GitHub repository Link](https://github.com/todorr92/approach_people){:target="_blank"}
 ![alt text](wireframes/Mockup-Generator.png "Mockup Page")
-
 ## Summary
 #### Approach People is an application that allows users to post jobs. Each entry can be easily searchable, and also updated or deleted. This project is my third milestone project while studying at Code Institute. The purpose of the milestone project is to utilize a database in a website built with a Python Flask project using Python, HTML, CSS and Javascript.
 ## Table of Contents
@@ -13,7 +11,6 @@
 ### 4. [Tests](#tests) 
 ### 5. [Deployment](#deployment)
 ### 6. [Credits](#credits)
-
 # UX
 ### Project Goal
 #### The user's experience was at the front and center during the development of this project. One of the goals of the project was to create an application that is simple and satisfying to use. For this reason, Approach People was built to be usable across all screen sizes.
@@ -36,7 +33,7 @@
 * [Do Hyeon](https://fonts.google.com/?query=Do+Hyeon) - used only in project name (Approach People)
 * [Noto Sans KR](https://fonts.google.com/?query=Noto+Sans+KR) -  used for rest of the website
 ## Wireframe Mockups:
-#### During the design process I drew up wireframes using [Balsamiq](https://balsamiq.com/)
+#### During the design process I drew up wireframes using [Balsamiq](https://balsamiq.com/){:target="_blank"}
 ![alt text](wireframes/index.png "Landing Page")
 ![alt text](wireframes/index-mobile.png "Landing Page on Mobile")
 ![alt text](wireframes/looking-for-a-job.png "Jobs Posted")
@@ -73,18 +70,18 @@
 + Python
 + Flask
 + Jinja2 templating language
-+ [Balsamiq](https://balsamiq.com/)
-+ [Favicon](https://favicon.io/)
-+ [Google Fonts](https://fonts.google.com/) 
-+ [Bootstrap](https://getbootstrap.com/) 
-+ [Materialize](https://materializecss.com/)
-+ [Jquery](https://jquery.com/)  
-+ [Github](https://github.com/) 
-+ [Gitpod](https://gitpod.io/workspaces/)
-+ [EmailJS](https://www.emailjs.com/)
-+ [Mockup Generator](https://techsini.com/multi-mockup/index.php)
-+ [Heroku](https://dashboard.heroku.com/apps)
-+ [MongoDB](https://www.mongodb.com/)
++ [Balsamiq](https://balsamiq.com/){:target="_blank"}
++ [Favicon](https://favicon.io/){:target="_blank"}
++ [Google Fonts](https://fonts.google.com/){:target="_blank"}
++ [Bootstrap](https://getbootstrap.com/){:target="_blank"}
++ [Materialize](https://materializecss.com/){:target="_blank"}
++ [Jquery](https://jquery.com/){:target="_blank"} 
++ [Github](https://github.com/){:target="_blank"}
++ [Gitpod](https://gitpod.io/workspaces/){:target="_blank"}
++ [EmailJS](https://www.emailjs.com/){:target="_blank"}
++ [Mockup Generator](https://techsini.com/multi-mockup/index.php){:target="_blank"}
++ [Heroku](https://dashboard.heroku.com/apps){:target="_blank"}
++ [MongoDB](https://www.mongodb.com/){:target="_blank"}
 ## Testing
 #### The test procedures and the key issues of the tests are written in the file [testing.md](testing.md)
 ## Deployment
@@ -116,21 +113,15 @@
 5. If you set the project up for automatic deploys it will deploy once the master branch is updated.
 6. OR in the manual deployment section, select the master branch and click 'Deploy Branch".
 7. The site should be successfully deployed
-
 # Credits
-
 ### Content
-+ Job specs  were taken from [jobs.ie](https://www.jobs.ie/)
-
++ Job specs  were taken from [jobs.ie](https://www.jobs.ie/){:target="_blank"}
 ### Media
-+ The images used in this site were obtained from [Pexels](https://www.pexels.com/)
-+ Favicon used in this site was obtained from [favicon](https://favicon.io/)
-
++ The images used in this site were obtained from [Pexels](https://www.pexels.com/){:target="_blank"}
++ Favicon used in this site was obtained from [favicon](https://favicon.io/){:target="_blank"}
 ### Code Credits
-+ [CSS ANIMATED BUTTONS](https://demos.themesfinity.com/css-buttons/) - Button style on landing page
-+ Other helpful resources were [w3schools.com](https://www.w3schools.com/), [CSS Gradient](https://cssgradient.io/), [Stack Overflow](https://stackoverflow.com/), [Material Design](https://material.io/), [MDN web docs](developer.mozilla.org), [Stack Abuse](stackabuse.com) and [CSS Tricks](https://css-tricks.com/)
-
-
++ [CSS ANIMATED BUTTONS](https://demos.themesfinity.com/css-buttons/){:target="_blank"} - Button style on landing page
++ Other helpful resources were [w3schools.com](https://www.w3schools.com/){:target="_blank"}, [CSS Gradient](https://cssgradient.io/){:target="_blank"}, [Stack Overflow](https://stackoverflow.com/){:target="_blank"}, [Material Design](https://material.io/){:target="_blank"}, [MDN web docs](developer.mozilla.org){:target="_blank"}, [Stack Abuse](stackabuse.com){:target="_blank"} and [CSS Tricks](https://css-tricks.com/){:target="_blank"}
 ### Acknowledgements
 #### I would like to thank my mentor, Akshat Garg for his support, insights and advices. 
 #### I would also like to thank Slack community for help provided when needed.

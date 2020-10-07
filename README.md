@@ -5,7 +5,7 @@
 ![alt text](wireframes/Mockup-Generator.png "Mockup Page")
 
 ## Summary
-#### Approach People is an application that allows users to post jobs. Each entry can be easily searchable, and also updated or deleted.
+#### Approach People is an application that allows users to post jobs. Each entry can be easily searchable, and also updated or deleted. This project is my third milestone project while studying at Code Institute. The purpose of the milestone project is to utilize a database in a website built with a Python Flask project using Python, HTML, CSS and Javascript.
 ## Table of Contents
 ### 1. [UX](#ux)
 ### 2. [Features](#features)
@@ -53,17 +53,17 @@
 #### Look for Job
 * Shows all current jobs posted in a container with a image(company logo) and few job details such as job name, company name, salary, job location, date posted and employment type.
 #### Post a Job
-* Takes all information in a form, populating DB with information given by user
+* Takes all information in a form, populating DB with information given by user.
 #### Job Details
-* Goes into more information about specific job clicked by showing job description, job requirements, company telephone number, email address, due date and posted by
+* Goes into more information about specific job clicked by showing job description, job requirements, company telephone number, email address, due date and posted by.
 #### Apply
 * By clicking on Apply button default mailing service will promt to open with pre set subject and email to address using mailto function.
 #### Edit Job
-* Takes all information from Mongo DB, once change is made DB is updated
+* Takes all information from Mongo DB, once change is made DB is updated.
 #### Delete Job
 * Deletes a job from DB, but before doing so, pop up modal is triggered asking user to confirm the action.
 #### Contact Us
-* Contact us form connected with my email address using EmailJS
+* Contact us form connected with my email address using EmailJS.
 ### Features Left to Implement
 * User Authentication
 * User profile creating where each user could store their cover letter and CV
@@ -72,6 +72,9 @@
 + HTML, CSS and JavaScript programming languages
 + Python
 + Flask
++ Jinja2 templating language
++ [Balsamiq](https://balsamiq.com/)
++ [Favicon](https://favicon.io/)
 + [Google Fonts](https://fonts.google.com/) 
 + [Bootstrap](https://getbootstrap.com/) 
 + [Materialize](https://materializecss.com/)
@@ -80,15 +83,11 @@
 + [Gitpod](https://gitpod.io/workspaces/)
 + [EmailJS](https://www.emailjs.com/)
 + [Mockup Generator](https://techsini.com/multi-mockup/index.php)
++ [Heroku](https://dashboard.heroku.com/apps)
++ [MongoDB](https://www.mongodb.com/)
 ## Testing
 #### The test procedures and the key issues of the tests are written in the file [testing.md](testing.md)
 ## Deployment
-### This website was deployed using GitHub Pages following steps below:
-1. From the menu items near the top of the page, select Settings.
-2. Scroll down to the GitHub Pages section.
-3. Under Source click the drop-down menu labelled None and select Master Branch
-4. On selecting Master Branch the page is automatically refreshed, the website is now deployed.
-5. Scroll back down to the GitHub Pages section to retrieve the link to the deployed website.
 ### Run this project locally
 #### Clone this project from GitHub:
 1. Under the repository name, click "Clone or download".
@@ -97,7 +96,26 @@
 4. Change the current working directory to the location where you want the cloned directory to be made.
 5. Type git clone, and then paste the URL you copied in Step 3.
 6. Press Enter. Your local clone will be created.
-Click [here](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) for further reading and troubleshooting on cloning a repository from GitHub.
+##### Next you will need to install all the projects dependencies - (type pip install -r requirements.txt).
+##### If you add any new packages to the project use - (pip freeze --local > requirements.txt) to update the [requirements.txt](requirements.txt) file with new dependencies.
+#### Environment Variables
+##### In your local IDE you can create an env.py file to store the MONGO_DBNAME, MONGO_URI & SECRET_KEY variables.
+##### Add the following code to your env.py and insert your applicable variables.
+###### import os
+###### os.environ["SECRET_KEY"] = "Your secret key"
+###### os.environ["MONGO_URI"] = "Your mongo_uri"
+### This website was deployed using Heroku following steps below:
+1. Create a new app in Heroku.
+2. In the settings tab, set the following config vars.
+* MONGO_URI = "Your mongo_uri"
+* SECRET_KEY = "Your secret key"
+* PORT = 5000
+* IP = 0.0.0.0
+3. From the heroku dashboard of your application, click on "Deploy" > "Deployment method" and select GitHub.
+4. Connect to the appropriate GitHub repository.
+5. If you set the project up for automatic deploys it will deploy once the master branch is updated.
+6. OR in the manual deployment section, select the master branch and click 'Deploy Branch".
+7. The site should be successfully deployed
 
 # Credits
 
@@ -105,7 +123,8 @@ Click [here](https://docs.github.com/en/github/creating-cloning-and-archiving-re
 + Job specs  were taken from [jobs.ie](https://www.jobs.ie/)
 
 ### Media
-+ The photos used in this site were obtained from [Pexels](https://www.pexels.com/)
++ The images used in this site were obtained from [Pexels](https://www.pexels.com/)
++ Favicon used in this site was obtained from [favicon](https://favicon.io/)
 
 ### Code Credits
 + [CSS ANIMATED BUTTONS](https://demos.themesfinity.com/css-buttons/) - Button style on landing page

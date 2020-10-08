@@ -14,22 +14,6 @@
              flex-direction: column;
      min-height: 100%;
 }
-/***PLACEHOLDER IN POST-JOB.HTML***/
-.dates ::-webkit-input-placeholder{
-    color: grey;
-}
-.dates ::-moz-placeholder{
-    color: grey;
-}
-.dates :-ms-input-placeholder{
-    color: grey;
-}
-.dates ::-ms-input-placeholder{
-    color: grey;
-}
-.dates ::placeholder{
-    color: grey;
-}
 /***NAVIGATION BAR***/
  .nav-wrapper, .sidenav{
      background-color: #17a2b8;
@@ -199,6 +183,22 @@
  .job-details-img img {
      width: 50%;
      height: 50%;
+}
+/***PLACEHOLDER IN POST-JOB.HTML***/
+.dates ::-webkit-input-placeholder{
+    color: grey;
+}
+.dates ::-moz-placeholder{
+    color: grey;
+}
+.dates :-ms-input-placeholder{
+    color: grey;
+}
+.dates ::-ms-input-placeholder{
+    color: grey;
+}
+.dates ::placeholder{
+    color: grey;
 }
 /***MEDIA QUERIES***/
 @media screen and (max-width: 426px) {

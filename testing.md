@@ -23,7 +23,7 @@
 * Successfully tested that buttons are redirecting to the appropriate route.
 #### Look for Job
 * Look for a Job - displays correctly all jobs posted with images and text showing correctly
-* Search Bar - Finds searched word with no issues if it exists in DB, in case there is no such word, red text is showing correctly on middle of the page.
+* Search Bar - Finds searched word with no issues if it exists in DB, function works by clicking enter and dedicated Search button. In case there is no such word, red text is showing correctly on middle of the page.
 * Apply - Redirects to a default mailing service, no issues there.
 * Edit Job - Takes all information from DB regarding clicked job and displays correctly in type of form, any of the field can be changed
 * Delete Job - Pop up modal appears on click asking user to confirm selected action, if user confirms the action, job is deleted successfully from DB, otherwise user is back to all Jobs Posted.
@@ -31,7 +31,8 @@
 * Pagination - It is showing correct number of jobs per page, and also creates another number if there is more jobs.
 #### Post a Job
 * Showing correct categories from DB.
-* Takes all user input without any issue, if user does not provide url, default img is loaded.
+* Form validation works normal, empty form cannot be submitted, every field has to be in place for the form to submit.
+* Takes all user input without any issue, if user does not provide image url, default image is loaded.
 #### Contact Us
 * Form is connected with my email address using EmailJS, once user provides all information and it is passing form validation, pop up modal appears giving feedback to the user while I am recieving email with users information.
 ## Code Validation

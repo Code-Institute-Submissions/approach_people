@@ -50,6 +50,8 @@
 * Simple and appealing background image, with two buttons leading to all jobs posted or to post a job
 #### Look for Job
 * Shows all current jobs posted in a container with a image(company logo) and few job details such as job name, company name, salary, job location, date posted and employment type.
+#### Search Jobs
+* This feature is designed to take a user's search request and find jobs that contain the search request.
 #### Post a Job
 * Takes all information in a form, populating DB with information given by user.
 #### Job Details
@@ -62,15 +64,19 @@
 * Deletes a job from DB, but before doing so, pop up modal is triggered asking user to confirm the action.
 #### Contact Us
 * Contact us form connected with my email address using EmailJS.
+#### Error Page
+* In case of any error, user will be aware of it.
 ### Features Left to Implement
 * User Authentication
 * User profile creating where each user could store their cover letter and CV
 * A password recovery system, that would send an email to a user's account, needs to be implemented.
+* Implement Cloudinary. Users should be able to upload their own images and the urls should be stored in the database with the job.
 ## Technologies Applied:
 + HTML, CSS and JavaScript programming languages
 + Python
 + Flask
 + Jinja2 templating language
++ Chrome Developer Tools
 + [Balsamiq](https://balsamiq.com/)
 + [Favicon](https://favicon.io/)
 + [Google Fonts](https://fonts.google.com/) 
